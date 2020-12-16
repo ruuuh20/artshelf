@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { auth } from 'firebase';
-import { useAuth } from '../lib/auth'
+import { useAuth } from '@/lib/auth'
+
+import { Button, Heading, Text, Code } from '@chakra-ui/react';
 
 export default function Home() {
   const auth = useAuth();
@@ -9,22 +11,20 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Artshelf app</title>
-        <link rel="icon" href="/favicon.ico" />
+      
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          artshelf
-        </h1>
+        <Heading fontWeight="normal">Artshelf</Heading>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-<button onClick={(e) => auth.signinWithGitHub()}>Sign in</button>
-{auth?.user && (
-<button onClick={(e) => auth.signout()}>Sign out</button>
-)}
+        <Text>
+          Current user: <Code>{auth.user ? auth.user.email : 'None'}</Code>
+        </Text>
+        {auth.user ? (
+          <Button onClick={(e) => auth.signout()}>Sign Out</Button>
+        ) : (
+<Button onClick={(e) => auth.signinWithGitHub()}>Sign in</Button>
+        )}
         <div>
           {auth?.user?.email}
         </div>
