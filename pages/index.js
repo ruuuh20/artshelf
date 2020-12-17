@@ -1,45 +1,48 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { auth } from 'firebase';
+
 import { useAuth } from '@/lib/auth'
 
-import { Button, Heading, Text, Code } from '@chakra-ui/react';
+import { Button, Heading, Text, Code, Flex } from '@chakra-ui/react';
+import { Camera } from 'react-feather';
+import EmptyState from '@/components/EmptyState';
 
 export default function Home() {
   const auth = useAuth();
+
+  
   return (
-    <div className={styles.container}>
+    <Flex
+      as="main"
+      direction="column"
+      align="center"
+      justify="center"
+      h="100vh"
+    >
       <Head>
         <title>Artshelf app</title>
       
       </Head>
 
-      <main className={styles.main}>
+      
         <Heading fontWeight="normal">Artshelf</Heading>
-
+<Camera />
         <Text>
           Current user: <Code>{auth.user ? auth.user.email : 'None'}</Code>
         </Text>
         {auth.user ? (
-          <Button onClick={(e) => auth.signout()}>Sign Out</Button>
+      <EmptyState />
+          // <Button as="a" href="/dashboard">Dashboard</Button>
         ) : (
-<Button onClick={(e) => auth.signinWithGitHub()}>Sign in</Button>
+<Button mt={4} size="sm" onClick={(e) => auth.signinWithGitHub()}>Sign in</Button>
         )}
+      
         <div>
           {auth?.user?.email}
         </div>
-      </main>
+   
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+   
+    </Flex>
   )
 }
