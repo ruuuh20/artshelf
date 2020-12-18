@@ -31,8 +31,10 @@ export default function Home() {
           Current user: <Code>{auth.user ? auth.user.email : 'None'}</Code>
         </Text>
         {auth.user ? (
+          <>
       <EmptyState />
-          // <Button as="a" href="/dashboard">Dashboard</Button>
+          <Button as="a" href="/dashboard">Dashboard</Button>
+          </>
         ) : (
 <Button mt={4} size="sm" onClick={(e) => auth.signinWithGitHub()}>Sign in</Button>
         )}

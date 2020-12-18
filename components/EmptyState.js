@@ -5,7 +5,7 @@ import DashboardShell from './DashboardShell';
 import AddLibraryModal from './AddLibraryModal'
 
 const EmptyState = () => (
-  <DashboardShell>
+//   <DashboardShell>
     <Flex
       width="100%"
       backgroundColor="white"
@@ -21,7 +21,7 @@ const EmptyState = () => (
       <Text mb={4}>Let’s get started.</Text>
     <AddLibraryModal />
     </Flex>
-  </DashboardShell>
+//   </DashboardShell>
 );
 
 export default EmptyState;
