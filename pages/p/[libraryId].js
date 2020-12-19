@@ -13,7 +13,8 @@ export async function getStaticProps(context) {
   return {
     props: {
       initialBooks: books
-    }
+    },
+    unstable_revalidate: 1
   };
 }
 
