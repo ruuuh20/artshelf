@@ -43,7 +43,7 @@ const AddLibraryModal = ({children}) => {
       isClosable: true
     });
      mutate(
-      '/api/libraries',
+      ['/api/libraries', auth.user.token],
       async (data) => {
         return { libraries: [...data.libraries, newLibrary] };
       },

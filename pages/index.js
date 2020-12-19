@@ -20,21 +20,27 @@ export default function Home() {
       h="100vh"
     >
       <Head>
+           <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (document.cookie && document.cookie.includes('artshelf-auth')) {
+                window.location.href = "/dashboard"
+              }
+            `
+          }}
+        />
         <title>Artshelf app</title>
-      
+  
       </Head>
 
-      
         <Heading fontWeight="normal">Artshelf</Heading>
 <Camera />
         <Text>
           Current user: <Code>{auth.user ? auth.user.email : 'None'}</Code>
         </Text>
+        <Text>A place to catalog your art books.</Text>
         {auth.user ? (
-          <>
-      <EmptyState />
           <Button as="a" href="/dashboard">Dashboard</Button>
-          </>
         ) : (
 <Button mt={4} size="sm" onClick={(e) => auth.signinWithGitHub()}>Sign in</Button>
         )}
@@ -42,8 +48,6 @@ export default function Home() {
         <div>
           {auth?.user?.email}
         </div>
-   
-
    
     </Flex>
   )

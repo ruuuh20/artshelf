@@ -10,8 +10,8 @@ import fetcher from '@/utils/fetcher';
 
 
 const Dashboard = () => {
-  const auth = useAuth();
- const { data } = useSWR('/api/libraries', fetcher);
+  const { user }= useAuth();
+ const { data } = useSWR(user ? ['/api/libraries', user.token] : null, fetcher);
 console.log(data)
   if (!data) {
     return (
