@@ -34,7 +34,7 @@ const AddLibraryModal = ({children}) => {
       name,
       url
     };
-    createLibrary(newLibrary);
+    const { id } = createLibrary(newLibrary);
      toast({
       title: 'Success!',
       description: "We've added your library.",
@@ -44,9 +44,9 @@ const AddLibraryModal = ({children}) => {
     });
      mutate(
       ['/api/libraries', auth.user.token],
-      async (data) => {
-        return { libraries: [...data.libraries, newLibrary] };
-      },
+      async (data) => ({
+       libraries: [...data.libraries, {id, ...newLibrary}] 
+      }),
       false
     );
     onClose();

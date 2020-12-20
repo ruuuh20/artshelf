@@ -4,6 +4,7 @@ import useSWR from 'swr'
 import { useAuth } from '@/lib/auth';
 import SiteTableSkeleton from '@/components/SiteTableSkeleton';
 import SiteTable from '@/components/SiteTable';
+import LibraryTableHeader from '@/components/LibraryTableHeader';
 import DashboardShell from '@/components/DashboardShell';
 import EmptyState from '@/components/EmptyState';
 import fetcher from '@/utils/fetcher';
@@ -12,10 +13,11 @@ import fetcher from '@/utils/fetcher';
 const Dashboard = () => {
   const { user }= useAuth();
  const { data } = useSWR(user ? ['/api/libraries', user.token] : null, fetcher);
-console.log(data)
+console.log(user)
   if (!data) {
     return (
     <DashboardShell>
+      <LibraryTableHeader />
         <SiteTableSkeleton />
     </DashboardShell>
             )
@@ -24,7 +26,8 @@ console.log(data)
 
 return (
     <DashboardShell>
-        {data.libraries ? <SiteTable libraries={data.libraries} /> : <EmptyState />}
+      <LibraryTableHeader />
+        {data.libraries.length ? <SiteTable libraries={data.libraries} /> : <EmptyState />}
     </DashboardShell>
         )
 };

@@ -11,6 +11,7 @@ import {
   Avatar,
   Icon
 } from '@chakra-ui/react';
+import NextLink from 'next/link'
 
 import { useAuth } from '@/lib/auth';
 import AddLibraryModal from './AddLibraryModal'
@@ -32,9 +33,15 @@ const DashboardShell = ({ children }) => {
           px={8}
         >
           <Flex>
+            <NextLink href="/" passHref>
             <Icon name="logo" size="24px" mr={8} />
-            <Link mr={4}>Sites</Link>
+            </NextLink>
+             <NextLink href="/dashboard" passHref>
+            <Link mr={4}>Libraries</Link>
+            </NextLink>
+             <NextLink href="/books" passHref>
             <Link>Books</Link>
+            </NextLink>
           </Flex>
           <Flex justifyContent="center" alignItems="center">
             { user && (
@@ -47,16 +54,7 @@ const DashboardShell = ({ children }) => {
         </Flex>
       </Flex>
       <Flex margin="0 auto" direction="column" maxW="1250px" px={8}>
-        <Breadcrumb>
-          <BreadcrumbItem>
-            <BreadcrumbLink>Sites</BreadcrumbLink>
-          </BreadcrumbItem>
-        </Breadcrumb>
-        <Flex justifyContent="space-between">
-          <Heading mb={8}>My Sites</Heading>
-         
-           <AddLibraryModal>+ Add Library</AddLibraryModal>
-        </Flex>
+        
         {children}
       </Flex>
     </Box>
