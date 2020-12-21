@@ -5,13 +5,32 @@ import { useAuth } from '@/lib/auth'
 
 import { Box, Stack, Button, Heading, Text, Code, Flex } from '@chakra-ui/react';
 import { Camera } from 'react-feather';
-import EmptyState from '@/components/EmptyState';
+import { getAllBooks, getLibrary } from '@/lib/db-admin';
+import Book from '@/components/Book';
+import BookLink from '@/components/BookLink';
 
-export default function Home() {
+const LIB_ID = '9TRU3Q9SKpIGVCU0vxz4';
+
+export async function getStaticProps(context) {
+  const { books} = await getAllBooks(LIB_ID);
+  const { library } = await getLibrary(LIB_ID)
+
+  return {
+    props: {
+      allBooks: books,
+      library
+    },
+    revalidate: 1
+  };
+}
+
+
+export default function Home( { allBooks , library }) {
+
   const auth = useAuth();
-
   
   return (
+    <>
     <Box bg="gray.100">
     <Flex
       as="main"
@@ -105,8 +124,30 @@ export default function Home() {
           </Stack>
           )
           }
-   
+  
     </Flex>
     </Box>
+
+      <Box
+        display="flex"
+        flexDirection="column"
+        width="full"
+        maxWidth="700px"
+        margin="0 auto"
+        mt={8}
+      >
+        <BookLink paths={[LIB_ID]} 
+        // siteId={LIB_ID} 
+        />
+        {allBooks.map((book, index) => (
+          <Book 
+          key={book.id}
+          settings={library?.settings}
+          isLast={index === allBooks.length - 1}
+          {...book} />
+        ))
+      }
+      </Box>
+      </>
   )
 }

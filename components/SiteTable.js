@@ -3,6 +3,7 @@ import { Box, Link } from '@chakra-ui/react';
 import { Table, Tr, Th, Td } from './Table';
 import { parseISO, format } from 'date-fns';
 import NextLink from 'next/link'
+import DeleteLibraryButton from './DeleteLibraryButton'
 
 const SiteTable = ({ libraries }) => {
   return (
@@ -18,17 +19,25 @@ const SiteTable = ({ libraries }) => {
       </thead>
       <tbody>
         {libraries.map((library) => (
-          <Box as="tr" key={library.url}>
-            <Td fontWeight="medium">{library.name}</Td>
+          <Box as="tr" key={library.id}>
+             <Td>
+                <NextLink
+                  href="/library/[libraryId]"
+                  as={`/library/${library.id}`}
+                  passHref
+                >
+                  <Link fontWeight="medium">{library.name}</Link>
+                </NextLink>
+              </Td>
             <Td>{library.url}</Td>
             <Td>
-                <NextLink href="/p/[libraryId]" as={`/p/${library.id}`} passHref>
+                <NextLink href="/library/[libraryId]" as={`/library/${library.id}`} passHref>
 <Link>View Books</Link>
                 </NextLink>
               
             </Td>
             <Td>{format(parseISO(library.createdAt), 'PPpp')}</Td>
-          
+          <Td><DeleteLibraryButton libraryId={library.id} /></Td>
           </Box>
         ))}
       </tbody>

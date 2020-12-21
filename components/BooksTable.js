@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Code, Switch, IconButton } from '@chakra-ui/react';
 
 import { Table, Tr, Th, Td } from './Table';
-import DeleteBookButton from './DeleteBookButton';
+
+import BookRow from './BookRow'
 
 const BooksTable = (props) => {
   return (
@@ -18,22 +18,7 @@ const BooksTable = (props) => {
       </thead>
       <tbody>
         {props.books.map((book) => (
-          <Box as="tr" key={book.id}>
-            <Td fontWeight="medium">{book.author}</Td>
-            <Td>{book.text}</Td>
-            <Td>
-              <Code>{book.route || '/'}</Code>
-            </Td>
-            <Td>
-              <Switch
-                colorScheme="green"
-                defaultIsChecked={book.status === 'active'}
-              />
-            </Td>
-            <Td>
-              <DeleteBookButton bookId={book.id} />
-            </Td>
-          </Box>
+          <BookRow key={book.id} {...book} />
         ))}
       </tbody>
     </Table>

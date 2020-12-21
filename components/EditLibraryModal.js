@@ -11,55 +11,40 @@ import {
   FormControl,
   FormLabel,
   Button,
-  Input,
   useDisclosure,
-  useToast
+  useToast,
+  Switch
 } from '@chakra-ui/react';
 
-import { createLibrary } from '@/lib/db';   
+import { updateLibrary } from '@/lib/db';   
 import { useAuth } from '@/lib/auth'
 import { mutate } from 'swr'
 
-const AddLibraryModal = ({children}) => {
+const EditLibraryModal = ({settings, libraryId, children }) => {
     const toast = useToast();
-  const initialRef = useRef();
   const auth = useAuth()
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { handleSubmit, register } = useForm();
 
-  const onCreateLibrary = ({name, url}) => {
-       const newLibrary = {
-      authorId: auth.user ? auth.user.uid : 'no user',
-      createdAt: new Date().toISOString(),
-      name,
-      url,
-      settings: {
-        iconos: true,
-        timestamp: true,
-        ratings: false
-      }
-    };
-    const { id } = createLibrary(newLibrary);
+  const onUpdateLibrary = async (newSettings) => {
+      await updateLibrary(libraryId, {
+          settings: newSettings
+      });
      toast({
       title: 'Success!',
-      description: "We've added your library.",
+      description: "We've updated your library.",
       status: 'success',
       duration: 5000,
       isClosable: true
     });
      mutate(
-      ['/api/libraries', auth.user.token],
-      async (data) => ({
-       libraries: [{id, ...newLibrary}, ...data.libraries, ] 
-      }),
-      false
+      ['/api/libraries', auth.user.token]
     );
     onClose();
   };
 
   return (
     <>
-     
        <Button
        onClick={onOpen}
             backgroundColor="gray.900"
@@ -73,38 +58,45 @@ const AddLibraryModal = ({children}) => {
           >
             {children}
           </Button>
-      <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent as="form" 
-        onSubmit={handleSubmit(onCreateLibrary)}
+        onSubmit={handleSubmit(onUpdateLibrary)}
         >
-          <ModalHeader fontWeight="bold">Add Library</ModalHeader>
+          <ModalHeader fontWeight="bold">Edit Library</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
-              <FormLabel>Name</FormLabel>
-              <Input
-                // ref={initialRef}
-                placeholder="My Library"
-                name="name"
-                ref={register({
-                  required: 'Required'
-                })}
+              <Switch
+                key={settings?.timestamp}
+                name="timestamp"
+                ref={register()}
+                color="green"
+                defaultIsChecked={settings?.timestamp}
               />
+              <FormLabel ml={2} htmlFor="show-timestamp">Show timestamp</FormLabel>
             </FormControl>
-
-            <FormControl mt={4}>
-              <FormLabel>Link</FormLabel>
-              <Input
-                placeholder="https://website.com"
-                name="url"
-                ref={register({
-                  required: 'Required'
-                })}
+            <FormControl>
+              <Switch
+                key={settings?.icons}
+                name="icons"
+                ref={register()}
+                color="green"
+                defaultIsChecked={settings?.icons}
               />
+              <FormLabel ml={2} htmlFor="show-icons">Show icons</FormLabel>
+            </FormControl>
+            <FormControl>
+              <Switch
+                key={settings?.ratings}
+                name="ratings"
+                ref={register()}
+                color="green"
+                defaultIsChecked={settings?.ratings}
+              />
+              <FormLabel ml={2} htmlFor="show-ratings">Show ratings</FormLabel>
             </FormControl>
           </ModalBody>
-
           <ModalFooter>
             <Button onClick={onClose} mr={3} fontWeight="medium">
               Cancel
@@ -115,7 +107,7 @@ const AddLibraryModal = ({children}) => {
               fontWeight="medium"
               type="submit"
             >
-              Create
+              Update
             </Button>
           </ModalFooter>
         </ModalContent>
@@ -124,4 +116,4 @@ const AddLibraryModal = ({children}) => {
   );
 };
 
-export default AddLibraryModal;
+export default EditLibraryModal;

@@ -2,7 +2,7 @@ import useSWR from 'swr';
 
 import { useAuth } from '@/lib/auth';
 import fetcher from '@/utils/fetcher';
-import EmptyState from '@/components/EmptyState';
+import BooksEmptyState from '@/components/BooksEmptyState';
 import DashboardShell from '@/components/DashboardShell';
 import BooksTable from '@/components/BooksTable';
 import BooksTableHeader from '@/components/BooksTableHeader';
@@ -27,7 +27,7 @@ console.log(data)
       {data.books.length ? (
         <BooksTable books={data.books} />
       ) : (
-        <EmptyState />
+        <BooksEmptyState />
       )}
     </DashboardShell>
   );

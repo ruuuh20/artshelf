@@ -28,7 +28,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false
+    fallback: true
   };
 }
 
@@ -50,25 +50,25 @@ const BooksPage = ({ initialBooks }) => {
       provider: auth.user.provider,
       status: 'pending'
     };
-
+    inputEl.current.value = '';
     setAllBooks([newBook, ...allBooks]);
     createBook(newBook);
   };
 
   return (
+  
     <Box
       display="flex"
       flexDirection="column"
       width="full"
-      maxWidth="700px"
-      margin="0 auto"
+  
     >
       {auth.user && (
         <Box as="form" onSubmit={onSubmit}>
          <FormControl my={8}>
             <FormLabel htmlFor="comment">Comment</FormLabel>
             <Input ref={inputEl} id="comment" placeholder="Leave a comment" />
-            <Button mt={4} type="submit" fontWeight="medium">
+            <Button mt={4} type="submit" fontWeight="medium" isDisabled={router.isFallback}>
               Add Comment
             </Button>
           </FormControl>
@@ -78,6 +78,7 @@ const BooksPage = ({ initialBooks }) => {
         <Book key={book.id} {...book} />
       ))}
     </Box>
+ 
   );
 };
 

@@ -6,16 +6,19 @@ import {
   Heading,
   Flex
 } from '@chakra-ui/react';
+import NextLink from 'next/link'
 
-const BooksTableHeader = () => (
+const BooksTableHeader = ({ libraryName }) => (
   <>
     <Breadcrumb>
       <BreadcrumbItem>
+      <NextLink href="/books" passHref>
         <BreadcrumbLink>Books</BreadcrumbLink>
+      </NextLink>
       </BreadcrumbItem>
     </Breadcrumb>
     <Flex justifyContent="space-between">
-      <Heading mb={8}>My Books</Heading>
+      <Heading mb={8}>All Books</Heading>
     </Flex>
   </>
 );

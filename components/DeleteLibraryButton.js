@@ -13,23 +13,23 @@ import {
 import { PhoneIcon } from '@chakra-ui/react'
 import { Trash2 } from 'react-feather';
 
-import { deleteBook } from '@/lib/db';
+import { deleteLibrary } from '@/lib/db';
 import { useAuth } from '@/lib/auth';
 
-const DeleteBookButton = ({ bookId }) => {
+const DeleteLibraryButton = ({ bookId }) => {
   const [isOpen, setIsOpen] = useState();
   const cancelRef = useRef();
   const auth = useAuth();
 
   const onClose = () => setIsOpen(false);
   const onDelete = () => {
-    deleteBook(bookId);
+    deleteLibrary(bookId);
     mutate(
-      ['/api/books', auth.user.token],
+      ['/api/libraries', auth.user.token],
       async (data) => {
         return {
-          books: data.books.filter(
-            (book) => book.id !== bookId
+          libraries: data.libraries.filter(
+            (library) => library.id !== libraryId
           )
         };
       },
@@ -40,13 +40,8 @@ const DeleteBookButton = ({ bookId }) => {
 
   return (
     <>
-      {/* <IconButton
-        aria-label="Delete book"
-        // icon={<PhoneIcon />}
-        variant="ghost"
-        onClick={() => setIsOpen(true)}
-      /> */}
-      <span style={{cursor:'pointer'}} aria-label="Delete book" onClick={() => setIsOpen(true)}>
+    
+      <span style={{cursor:'pointer'}} aria-label="Delete library" onClick={() => setIsOpen(true)}>
 <Trash2 />
       </span>
       <AlertDialog
@@ -57,7 +52,7 @@ const DeleteBookButton = ({ bookId }) => {
         <AlertDialogOverlay />
         <AlertDialogContent>
           <AlertDialogHeader fontSize="lg" fontWeight="bold">
-            Delete Feedback
+            Delete Library
           </AlertDialogHeader>
           <AlertDialogBody>
             Are you sure? You can't undo this action afterwards.
@@ -76,4 +71,4 @@ const DeleteBookButton = ({ bookId }) => {
   );
 };
 
-export default DeleteBookButton;
+export default DeleteLibraryButton;
