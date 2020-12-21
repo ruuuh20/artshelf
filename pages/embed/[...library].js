@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Box, FormControl, FormLabel, Input, Button } from '@chakra-ui/react';
+import { Box, Text, FormLabel, Input, Button } from '@chakra-ui/react';
 import Book from '@/components/Book';
 import BookLink from '@/components/BookLink';
 import { getAllBooks, getAllLibraries, getLibrary } from '@/lib/db-admin';
