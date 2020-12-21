@@ -37,9 +37,7 @@ const EditLibraryModal = ({settings, libraryId, children }) => {
       duration: 5000,
       isClosable: true
     });
-     mutate(
-      ['/api/libraries', auth.user.token]
-    );
+     mutate(`/api/library/${libraryId}`, auth.user.token);
     onClose();
   };
 
