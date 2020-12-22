@@ -47,7 +47,7 @@ const EmbeddedBooksPage = ({ initialBooks, library }) => {
       width="full"
     >
     <BookLink paths={router?.query?.library || []} />
-    initialBooks?.length ? (
+    initialBooks.length ? (
  {initialBooks.map((book, index) => (
         <Book key={book.id} 
         settings={library?.settings}
