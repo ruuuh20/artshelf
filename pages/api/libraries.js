@@ -1,4 +1,4 @@
-import {auth} from '@/lib/firebase-admin';
+import {auth } from '@/lib/firebase-admin';
 import { getUserLibraries } from '@/lib/db-admin'
 
 export default async (req, res) => {
@@ -6,8 +6,11 @@ export default async (req, res) => {
 
 try {
     // console.log(req)
+  //     var storageRef = storage.ref();
+  // var imagesRef = storageRef.child('hopper11.png');
     const { uid } = await auth.verifyIdToken(req.headers.token);
     const { libraries } = await getUserLibraries(uid);
+  
       res.status(200).json({ libraries });
     //  res.status(200).json({ name: 'hi'})
 }

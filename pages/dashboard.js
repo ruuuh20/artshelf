@@ -9,11 +9,11 @@ import DashboardShell from '@/components/DashboardShell';
 import EmptyState from '@/components/EmptyState';
 import fetcher from '@/utils/fetcher';
 
-
 const Dashboard = () => {
+
   const { user }= useAuth();
  const { data } = useSWR(user ? ['/api/libraries', user.token] : null, fetcher);
-console.log(user)
+
   if (!data) {
     return (
     <DashboardShell>
@@ -26,6 +26,7 @@ console.log(user)
 
 return (
     <DashboardShell>
+
       <LibraryTableHeader />
         {data.libraries.length ? <SiteTable libraries={data.libraries} /> : <EmptyState />}
     </DashboardShell>

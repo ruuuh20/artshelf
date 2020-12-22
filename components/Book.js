@@ -1,27 +1,26 @@
 import React from 'react';
-import { Box, Heading, Text, Divider, Flex } from '@chakra-ui/react';
+import { Box, Heading, Text, Divider, Flex, Image } from '@chakra-ui/react';
 import { format, parseISO } from 'date-fns';
 
-const Book = ({ author, description, createdAt, settings, isLast, provider }) => (
+const Book = ({ author, description, name, isbn, other, createdAt, settings, imageUrl, isLast, provider }) => (
   <Box borderRadius={4} maxWidth="700px" w="full">
-    <Flex align="center">
+    <Flex align="center" justify="center" direction="column">
+    <Box>
+      <Image src="https://via.placeholder.com/300x300" alt="image" mb={8} />
+    </Box>
     <Heading size="sm" as="h3" mb={0} color="gray.900" fontWeight="medium">
-      {author}
+      {name ? name : 'hi'}
     </Heading>
-    {settings?.icons && (
-        // <Icon name={provider.slice(0, -4)} size="13px" ml="6px" />
-        <Text>icon</Text>
-    )}
-    </Flex>
+   
+   
       {settings?.timestamp && (
       <Text color="gray.500" mb={4} fontSize="xs">
         {format(parseISO(createdAt), 'PPpp')}
       </Text>
     )}
-    <Text color="gray.500" mb={4} fontSize="xs">
-      {format(parseISO(createdAt), 'PPpp')}
-    </Text>
+ 
     <Text color="gray.800">{description}</Text>
+     </Flex>
     <Divider borderColor="gray.200" backgroundColor="gray.200" mt={8} mb={8} />
   </Box>
 );

@@ -7,7 +7,7 @@ import DeleteBookButton from './DeleteBookButton';
 import { updateBook } from '@/lib/db';
 import { mutate } from 'swr';
 
-const BooksRow = ({ id, author, description, route, status}) => {
+const BooksRow = ({ id, name, author, description, route, status}) => {
       const auth = useAuth();
   const isChecked = status === 'active';
 
@@ -18,7 +18,8 @@ const BooksRow = ({ id, author, description, route, status}) => {
 
   return (
      <Box as="tr" key={id}>
-            <Td fontWeight="medium">{author}</Td>
+            <Td> book image</Td>
+            <Td fontWeight="medium">{name}</Td>
             <Td>{description}</Td>
             <Td>
               <Code>{route || '/'}</Code>

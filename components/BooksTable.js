@@ -6,11 +6,12 @@ import BookRow from './BookRow'
 
 const BooksTable = (props) => {
   return (
-    <Table>
+    <Table size="lg">
       <thead>
         <Tr>
-          <Th>Name</Th>
-          <Th>Feedback</Th>
+          <Th>Image</Th>
+          <Th>Title</Th>
+          <Th>Description</Th>
           <Th>Route</Th>
           <Th>Visible</Th>
           <Th width="50px">{''}</Th>
