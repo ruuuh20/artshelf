@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Text, FormLabel, Input, Button } from '@chakra-ui/react';
+import { Box, Text, FormLabel, Button } from '@chakra-ui/react';
 import Book from '@/components/Book';
 import BookLink from '@/components/BookLink';
 import { getAllBooks, getAllLibraries, getLibrary } from '@/lib/db-admin';
@@ -37,25 +37,7 @@ export async function getStaticPaths() {
 const EmbeddedBooksPage = ({ initialBooks, library }) => {
 
   const router = useRouter();
-  const inputEl = useRef(null);
  
-
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const newBook= {
-  //     author: auth.user.name,
-  //     authorId: auth.user.uid,
-  //     libraryId: router.query.libraryId,
-  //     description: inputEl.current.value,
-  //     createdAt: new Date().toISOString(),
-  //     provider: auth.user.provider,
-  //     status: 'pending'
-  //   };
-  //   inputEl.current.value = '';
-  //   setAllBooks([newBook, ...allBooks]);
-  //   createBook(newBook);
-  // };
 
   return (
 
