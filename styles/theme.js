@@ -12,6 +12,12 @@ const theme = {
     medium: 600,
     bold: 700
   },
+  colors: {
+    ...chakraTheme.colors,
+    brand: {
+      100: "#99c1b9"
+    }
+  },
   icons: {
     ...chakraTheme.icons,
     logo: {

@@ -16,14 +16,14 @@ import { Trash2 } from 'react-feather';
 import { deleteLibrary } from '@/lib/db';
 import { useAuth } from '@/lib/auth';
 
-const DeleteLibraryButton = ({ bookId }) => {
+const DeleteLibraryButton = ({ libraryId }) => {
   const [isOpen, setIsOpen] = useState();
   const cancelRef = useRef();
   const auth = useAuth();
 
   const onClose = () => setIsOpen(false);
   const onDelete = () => {
-    deleteLibrary(bookId);
+    deleteLibrary(libraryId);
     mutate(
       ['/api/libraries', auth.user.token],
       async (data) => {

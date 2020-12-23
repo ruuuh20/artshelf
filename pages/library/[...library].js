@@ -118,7 +118,7 @@ const BooksPage = () => {
       <Button
         type="submit"
         isDisabled={!libraryData || !booksData}
-        backgroundColor="gray.900"
+        backgroundColor="brand.100"
         color="white"
         fontWeight="medium"
         mt={4}

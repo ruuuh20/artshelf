@@ -5,8 +5,8 @@ import { format, parseISO } from 'date-fns';
 const Book = ({ author, description, name, isbn, other, createdAt, settings, imageUrl, isLast, provider }) => (
   <Box borderRadius={4} maxWidth="700px" w="full">
     <Flex align="center" justify="center" direction="column">
-    <Box>
-      <Image src="https://via.placeholder.com/300x300" alt="image" mb={8} />
+    <Box width={200}>
+      <Image src={imageUrl || "https://via.placeholder.com/200x250"} alt="image" mb={8} />
     </Box>
     <Heading size="sm" as="h3" mb={0} color="gray.900" fontWeight="medium">
       {name ? name : 'hi'}
