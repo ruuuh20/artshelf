@@ -17,10 +17,10 @@ const BookPage = () => {
     <DashboardShell>
       <Container maxW="60rem">
         <Flex justifyContent="space-between">
-          <Heading mb={8}>{book.name}</Heading>
+          <Heading mb={8}>{book ? book.name : 'loading'}</Heading>
           <Box>
             <Image
-              src={book.imageUrl || "https://via.placeholder.com/400x300"}
+              src={book ? book.imageUrl || "https://via.placeholder.com/400x300" : 'loading'}
             ></Image>
           </Box>
         </Flex>
