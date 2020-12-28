@@ -9,14 +9,14 @@ const BooksTable = (props) => {
   return (
     <Table size="lg">
       <thead>
-        <Tr>
+        <Tr backgroundColor="brand.yellow">
           <Th>-</Th>
-          <Th width="150px">Title</Th>
-          <Th width="120px">Author</Th>
-          <Th>Description</Th>
-          <Th>Publisher/Series</Th>
-          <Th>ISBN</Th>
-          <Th>Active</Th>
+          <Th color="brand.blue" width="150px">Title</Th>
+          <Th color="brand.blue" width="120px">Author</Th>
+          <Th color="brand.blue">Description</Th>
+          <Th color="brand.blue">Publisher/Series</Th>
+          <Th color="brand.blue">ISBN</Th>
+          <Th color="brand.blue">Active</Th>
           <Th width="50px">{''}</Th>
         </Tr>
       </thead>

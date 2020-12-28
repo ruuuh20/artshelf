@@ -19,7 +19,7 @@ const SkeletonRow = ({ width }) => (
   </Box>
 );
 
-const SiteTableSkeleton = () => {
+const LibrariesTableSkeleton = () => {
   return (
     <Table>
       <thead>
@@ -27,7 +27,7 @@ const SiteTableSkeleton = () => {
           <Th>Name</Th>
           <Th>Site Link</Th>
           <Th>Books Link</Th>
-          <Th>Date Added</Th>
+          <Th>No. of items</Th>
           <Th>{''}</Th>
         </Tr>
       </thead>
@@ -42,4 +42,4 @@ const SiteTableSkeleton = () => {
   );
 };
 
-export default SiteTableSkeleton;
+export default LibrariesTableSkeleton;

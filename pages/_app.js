@@ -1,3 +1,4 @@
+import '../styles/globals.css'
 import { ChakraProvider, CSSReset } from "@chakra-ui/react"
 import { AuthProvider } from "@/lib/auth"
 import customTheme from '@/styles/theme';

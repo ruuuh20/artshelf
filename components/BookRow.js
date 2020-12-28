@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Code, Switch, Image } from '@chakra-ui/react';
-
+import { Box, Code, Switch, Image, Link } from '@chakra-ui/react';
+import NextLink from 'next/link'
 import {  Td } from './Table';
 import { useAuth } from '@/lib/auth';
 import DeleteBookButton from './DeleteBookButton';
@@ -23,7 +23,10 @@ const BooksRow = ({ id, name, author, description, isbn, status, imageUrl, publi
       width="300px" 
       src={imageUrl || "https://via.placeholder.com/80x120"} alt="image"/>
     </Td>
-            <Td fontSize="sm" fontWeight="medium">{name}</Td>
+            <Td fontSize="sm" fontWeight="medium">
+              <NextLink href="/book/[bookId]" as={`/book/${id}`}>
+                <Link>{name}</Link>
+                </NextLink></Td>
             <Td fontSize="sm">{author}</Td>
             <Td fontSize="sm">{description}</Td>
             <Td fontSize="sm">{publisher}</Td>

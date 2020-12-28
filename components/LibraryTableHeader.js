@@ -11,7 +11,7 @@ import AddLibraryModal from './AddLibraryModal';
 
 const LibraryTableHeader = () => (
   <>
-    <Breadcrumb>
+    <Breadcrumb fontSize="sm">
       <BreadcrumbItem>
         <BreadcrumbLink>Libraries</BreadcrumbLink>
       </BreadcrumbItem>

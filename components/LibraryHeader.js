@@ -15,7 +15,7 @@ const LibraryHeader = ( { isLibraryOwner, library, libraryId, route }) => {
     
     return (
         <Box mx={4}>
-            <Breadcrumb>
+            <Breadcrumb fontSize="sm">
             <BreadcrumbItem>
                 <NextLink href="/dashboard" passHref>
                 <BreadcrumbLink>Libraries</BreadcrumbLink>

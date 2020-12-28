@@ -15,7 +15,18 @@ const theme = {
   colors: {
     ...chakraTheme.colors,
     brand: {
-      100: "#99c1b9"
+      100: "#99c1b9",
+      yellow: "#DBBD7F",
+      blue: "#214261",
+      white: "#FAF7EB",
+      green: "rgb(155, 163, 153)"
+    }
+  },
+  styles: {
+    global: {
+      body: {
+        bg: "#F9F7EE"
+      }
     }
   },
   icons: {

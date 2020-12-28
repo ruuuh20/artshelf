@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import { useAuth } from '@/lib/auth'
-
+import Link from 'next/link'
 import { Box, Stack, Button, Heading, Text, Code, Flex } from '@chakra-ui/react';
 import { Camera } from 'react-feather';
 import { getAllBooks, getLibrary } from '@/lib/db-admin';
@@ -31,13 +31,13 @@ export default function Home( { allBooks , library }) {
   
   return (
     <>
-    <Box bg="gray.100">
+    <Box color="#484AB3">
     <Flex
       as="main"
       direction="column"
       align="center"
       justify="center"
-      h="100vh"
+      h="80vh"
     >
       <Head>
            <script
@@ -50,10 +50,10 @@ export default function Home( { allBooks , library }) {
           }}
         />
         <title>Artshelf app</title>
-  
       </Head>
 
-        <Heading fontWeight="normal">Artshelf</Heading>
+        <Heading as="h1" size="4xl"
+        fontWeight="normal">Artshelf</Heading>
 <Camera />
         <Text>
           Current user: <Code>{auth.user ? auth.user.email : 'None'}</Code>
@@ -73,8 +73,10 @@ export default function Home( { allBooks , library }) {
             as="a"
             href="/dashboard"
             backgroundColor="white"
-            color="gray.900"
+            color="#484AB3"
             variant="outline"
+            border="2px"
+            borderColor="#484AB3"
             fontWeight="medium"
             mt={4}
             size="lg"
@@ -87,30 +89,16 @@ export default function Home( { allBooks , library }) {
             View Dashboard
           </Button>
         ) : (
-          <Stack>
-            <Button
-              onClick={(e) => auth.signinWithGitHub()}
-              backgroundColor="gray.900"
-              color="white"
-              fontWeight="medium"
-              leftIcon="github"
-              mt={4}
-              size="lg"
-              _hover={{ bg: 'gray.700' }}
-              _active={{
-                bg: 'gray.800',
-                transform: 'scale(0.95)'
-              }}
-            >
-              Sign In with GitHub
-            </Button>
+          <Stack> 
             <Button
               onClick={(e) => auth.signinWithGoogle()}
               backgroundColor="white"
               color="gray.900"
               variant="outline"
-              fontWeight="medium"
+              // fontWeight="medium"
               leftIcon="google"
+               border="2px"
+            borderColor="#484AB3"
               mt={4}
               size="lg"
               _hover={{ bg: 'gray.100' }}
@@ -121,6 +109,12 @@ export default function Home( { allBooks , library }) {
             >
               Sign In with Google
             </Button>
+            <Link href='/login'>
+              <a>Login with emaill</a>
+            </Link>
+            <Link href='/signup'>
+              <a>Sign up with emaill</a>
+            </Link>
           </Stack>
           )
           }

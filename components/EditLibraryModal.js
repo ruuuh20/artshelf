@@ -45,8 +45,8 @@ const EditLibraryModal = ({settings, libraryId, children }) => {
     <>
        <Button
        onClick={onOpen}
-            backgroundColor="gray.900"
-            color="white"
+            backgroundColor="brand.blue"
+            color="brand.white"
             fontWeight="medium"
             _hover={{ bg: 'gray.700' }}
             _active={{

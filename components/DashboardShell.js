@@ -1,10 +1,6 @@
 import React from 'react';
 import {
   Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Heading,
   Button,
   Flex,
   Link,
@@ -20,8 +16,10 @@ const DashboardShell = ({ children }) => {
   const { user, signout } = useAuth();
 
   return (
-    <Box backgroundColor="gray.100" h="100vh">
-      <Flex backgroundColor="white" mb={16} w="full">
+    <Box backgroundColor="#FAF7EB" 
+    // h="100vh"
+    >
+      <Flex backgroundColor="#214261" mb={16} w="full" color="#FAF7EB">
         <Flex
           alignItems="center"
           justifyContent="space-between"
@@ -45,7 +43,7 @@ const DashboardShell = ({ children }) => {
           </Flex>
           <Flex justifyContent="center" alignItems="center">
             { user && (
-            <Button variant="ghost" mr={2} onClick={() => signout()}>
+            <Button color="brand.white" variant="link" mr={2} onClick={() => signout()}>
               Log Out
             </Button>
             )}

@@ -44,6 +44,7 @@ import fetcher from '@/utils/fetcher';
 
 // const BooksPage = ({ initialBooks, library }) => {
 const BooksPage = () => {
+  const [newImageUrl, setNewImageUrl] = useState('')
    const { user, loading } = useAuth();
   const router = useRouter();
   const inputEl = useRef(null);
@@ -88,7 +89,7 @@ const BooksPage = () => {
       isbn: isbnEl.current.value,
       pages: pagesEl.current.value,
       other: otherEl.current.value,
-      imageUrl: imageUrlEl.current.value,
+      imageUrl: newImageUrl,
 
       createdAt: new Date().toISOString(),
       provider: user.provider,
@@ -118,7 +119,7 @@ const BooksPage = () => {
       <Button
         type="submit"
         isDisabled={!libraryData || !booksData}
-        backgroundColor="brand.100"
+        backgroundColor="brand.blue"
         color="white"
         fontWeight="medium"
         mt={4}
@@ -134,6 +135,22 @@ const BooksPage = () => {
       // <LoginButtons />
       <div>hi</div>
     );
+
+    const uploadFile = async e => {
+      console.log("uploading")
+      const files = e.target.files;
+      const formData = new FormData();
+      formData.append('file', files[0])
+      formData.append('upload_preset', 'booksApp');
+
+      const res = await fetch('https://api.cloudinary.com/v1_1/drc9j7ogf/image/upload', {
+        method: 'POST',
+        body: formData
+      });
+
+      const file = await res.json();
+      setNewImageUrl(file.secure_url)
+    }
 
   return (
     <DashboardShell>
@@ -160,7 +177,8 @@ const BooksPage = () => {
             <Input ref={isbnEl} placeholder="ISBN" size="md" />
             <Input ref={pagesEl} placeholder="Pages" size="md" />
             <Input ref={otherEl} placeholder="Other" size="md" />
-            <Input ref={imageUrlEl} placeholder="Image URL" size="md" />
+          
+          <Input ref={imageUrlEl} type="file" name="file" placeholder="Upload image" onChange={uploadFile} />
             <Textarea
                 ref={inputEl}
                 id="comment"

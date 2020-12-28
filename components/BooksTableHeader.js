@@ -10,7 +10,7 @@ import NextLink from 'next/link'
 
 const BooksTableHeader = ({ libraryName }) => (
   <>
-    <Breadcrumb>
+    <Breadcrumb fontSize="sm">
       <BreadcrumbItem>
       <NextLink href="/books" passHref>
         <BreadcrumbLink>Books</BreadcrumbLink>
