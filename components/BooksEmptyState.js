@@ -14,7 +14,7 @@ const BooksEmptyState = () => (
     <Heading size="lg" mb={2}>
       There aren't any books.
     </Heading>
-    <Text mb={4}>Share your Library</Text>
+    <Text mb={4}>You can add books to your libraries.</Text>
   </Flex>
 );
 

@@ -17,17 +17,15 @@ const BooksTable = (props) => {
       marginRight="-50vw"
       marginBottom="5rem"
       position="relative"
-      >
-        
-    
+    >
     <Grid
-    paddingTop="4rem"
-    paddingBottom="4rem"
-    margin="0 auto"
-    // h="400px"
-    gap={6}
-    maxWidth="1250px"
-    templateColumns="repeat(auto-fit,minmax(120px,1fr))"
+      paddingTop="4rem"
+      paddingBottom="4rem"
+      margin="0 auto"
+      // h="400px"
+      gap={6}
+      maxWidth="1250px"
+      templateColumns="repeat(auto-fit,minmax(120px,1fr))"
     >
       <GridItem pos="relative" colSpan={1} bg="tomato">
         <Image 

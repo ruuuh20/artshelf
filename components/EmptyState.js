@@ -16,10 +16,10 @@ const EmptyState = () => (
       direction="column"
     >
       <Heading size="lg" mb={2}>
-        You haven’t added any sites.
+        Add your libraries here.
       </Heading>
-      <Text mb={4}>Let’s get started.</Text>
-    <AddLibraryModal />
+      <Text mb={4}>You can start by creating your first one!</Text>
+    <AddLibraryModal>Add a library</AddLibraryModal>
     </Flex>
 //   </DashboardShell>
 );
