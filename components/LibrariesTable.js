@@ -36,14 +36,18 @@ const LibrariesTable = ({ libraries }) => {
         // fit="cover"
          />
          <NextLink href="/library/[libraryId]" as={`/library/${libraries[0].id}`} passHref>
-<Link>
-         <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
-         </Link>
+          <Link>
+            <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
+          </Link>
          </NextLink>
-         </GridItem>
+        </GridItem>
       <GridItem  pos="relative" colSpan={1} bg="#aa9593">
         <Image src="https://source.unsplash.com/YLSwjSy7stw/1200x800" />
+        <NextLink href="/library/[libraryId]" as={`/library/${libraries[1].id}`} passHref>
+        <Link>
         <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[1].name}</Text>
+        </Link>
+        </NextLink>
         </GridItem>
       <GridItem  pos="relative" colSpan={1} bg="papayawhip">
         <Image src="https://source.unsplash.com/mbKApJz6RSU/1200x800" />
