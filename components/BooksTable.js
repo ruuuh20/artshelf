@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Box, Link, Grid, GridItem, Image , Text, Divider } from '@chakra-ui/react';
 import { Table, Tr, Th, Td } from './Table';
 
 import BooksRow from './BookRow'
@@ -28,23 +28,33 @@ const BooksTable = (props) => {
       templateColumns="repeat(auto-fit,minmax(120px,1fr))"
     >
       <GridItem pos="relative" colSpan={1} bg="tomato">
-        <Image 
-        src="https://source.unsplash.com/DhG6wSAtL8o/1200x800"
-        // fit="cover"
-         />
+        <Image src="https://source.unsplash.com/DhG6wSAtL8o/1200x800" />
+        {props.books[0] ? (
          <NextLink href="/library/[libraryId]" as={`/library/${props.books[0].id}`} passHref>
 <Link>
          <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
          </Link>
          </NextLink>
-         </GridItem>
+        ) : <Text>{''}</Text>}
+      </GridItem>
       <GridItem  pos="relative" colSpan={1} bg="#aa9593">
         <Image src="https://source.unsplash.com/YLSwjSy7stw/1200x800" />
+         {props.books[1] ? (
+          <NextLink href="/library/[libraryId]" as={`/library/${props.books[1].id}`} passHref>
+          <Link>
         <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[1].name}</Text>
-        </GridItem>
+        </Link></NextLink>
+        ) : <Text>{''}</Text>}
+      </GridItem>
       <GridItem  pos="relative" colSpan={1} bg="papayawhip">
         <Image src="https://source.unsplash.com/mbKApJz6RSU/1200x800" />
-        <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text></GridItem>
+         {props.books[2] ? (
+         <NextLink href="/library/[libraryId]" as={`/library/${props.books[2].id}`} passHref>
+<Link>
+        <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
+        </Link></NextLink>
+        ) : <Text>{''}</Text>}
+        </GridItem>
       </Grid>
       <Divider />
       </Box>
