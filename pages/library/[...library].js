@@ -55,6 +55,7 @@ const BooksPage = () => {
   const pagesEl = useRef(null)
   const otherEl = useRef(null)
   const imageUrlEl = useRef(null)
+  const priceEl = useRef(null)
   // const [allBooks, setAllBooks] = useState(initialBooks);
   // const [libraryId, route] = router.query.library;
   const libraryAndRoute = router.query?.library;
@@ -90,7 +91,7 @@ const BooksPage = () => {
       pages: pagesEl.current.value,
       other: otherEl.current.value,
       imageUrl: newImageUrl,
-
+      price: priceEl.current.value,
       createdAt: new Date().toISOString(),
       provider: user.provider,
       status: 'pending'
@@ -177,6 +178,7 @@ const BooksPage = () => {
             <Input ref={isbnEl} placeholder="ISBN" size="md" />
             <Input ref={pagesEl} placeholder="Pages" size="md" />
             <Input ref={otherEl} placeholder="Other" size="md" />
+            <Input type="number" ref={priceEl} placeholder="Price" size="md" />
           
           <Input ref={imageUrlEl} type="file" name="file" placeholder="Upload image" onChange={uploadFile} />
             <Textarea

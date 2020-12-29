@@ -57,7 +57,7 @@ const BooksTable = (props) => {
           <Th color="brand.blue" width="120px">Author</Th>
           <Th color="brand.blue">Description</Th>
           <Th color="brand.blue">Publisher/Series</Th>
-          <Th color="brand.blue">ISBN</Th>
+        
           <Th color="brand.blue">Active</Th>
           <Th width="50px">{''}</Th>
         </Tr>

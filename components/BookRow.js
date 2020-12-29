@@ -30,9 +30,7 @@ const BooksRow = ({ id, name, author, description, isbn, status, imageUrl, publi
             <Td fontSize="sm">{author}</Td>
             <Td fontSize="sm">{description}</Td>
             <Td fontSize="sm">{publisher}</Td>
-            <Td>
-              <Code>{isbn}</Code>
-            </Td>
+          
             <Td>
               <Switch
                 colorScheme="teal"

@@ -36,7 +36,7 @@ const LibrariesTable = ({ libraries }) => {
               <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
             </Link>
           </NextLink>
-          ) : <Text>no library</Text>}
+          ) : <Text as="h4" fontWeight="bold" >no library</Text>}
         </GridItem>
       <GridItem  pos="relative" colSpan={1} bg="#aa9593">
         <Image src="https://source.unsplash.com/YLSwjSy7stw/1200x800" />
@@ -46,7 +46,7 @@ const LibrariesTable = ({ libraries }) => {
         <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[1].name}</Text>
         </Link>
         </NextLink>
-         ) : <Text>no library</Text>}
+         ) : <Text as="h4" fontWeight="bold" >no library</Text>}
         </GridItem>
       <GridItem  pos="relative" colSpan={1} bg="papayawhip">
         <Image src="https://source.unsplash.com/mbKApJz6RSU/1200x800" />
@@ -56,7 +56,7 @@ const LibrariesTable = ({ libraries }) => {
         <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[2].name}</Text>
           </Link>
         </NextLink>
-         ) : <Text>no library</Text>}
+         ) : <Text as="h4" fontWeight="bold" textAlign="center">no library</Text>}
         </GridItem>
       </Grid>
       <Divider />
