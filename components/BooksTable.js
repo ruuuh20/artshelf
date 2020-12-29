@@ -5,7 +5,6 @@ import NextLink from 'next/link'
 import BooksRow from './BookRow'
 
 const BooksTable = (props) => {
-  console.log(props)
   return (
     <>
     <Box
@@ -28,30 +27,28 @@ const BooksTable = (props) => {
       templateColumns="repeat(auto-fit,minmax(120px,1fr))"
     >
       <GridItem pos="relative" colSpan={1} bg="rgb(170, 149, 147)">
-        <Image src="https://source.unsplash.com/DhG6wSAtL8o/1200x800" />
         {props.books[0] ? (
-         <NextLink href="/library/[libraryId]" as={`/library/${props.books[0].id}`} passHref>
+         <NextLink href="/book/[bookId]" as={`/book/${props.books[0].id}`} passHref>
           <Link>
-          <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
+          <Image src={props.books[0].imageUrl} pos="absolute" width="100px" left="50%" top="50%" transform="translate(-50%, 50%)" />
+          <Text as="h3" fontWeight="bold" fontSize="24px"  color="brand.white">{props.books[0].name}</Text>
           </Link>
          </NextLink>
         ) : <Text>{''}</Text>}
       </GridItem>
       <GridItem  pos="relative" colSpan={1} bg="#aa9593">
-        <Image src="https://source.unsplash.com/YLSwjSy7stw/1200x800" />
          {props.books[1] ? (
-          <NextLink href="/library/[libraryId]" as={`/library/${props.books[1].id}`} passHref>
+          <NextLink href="/book/[bookId]" as={`/book/${props.books[1].id}`} passHref>
           <Link>
-        <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[1].name}</Text>
+        <Text marginTop="1rem" as="h3" fontWeight="bold" fontSize="24px"  color="brand.white">{props.books[1].name}</Text>
         </Link></NextLink>
         ) : <Text>{''}</Text>}
       </GridItem>
       <GridItem  pos="relative" colSpan={1} bg="rgb(152, 185, 194)">
-        <Image src="https://source.unsplash.com/mbKApJz6RSU/1200x800" />
          {props.books[2] ? (
-         <NextLink href="/library/[libraryId]" as={`/library/${props.books[2].id}`} passHref>
+         <NextLink href="/book/[bookId]" as={`/book/${props.books[2].id}`} passHref>
 <Link>
-        <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
+        <Text marginTop="1rem" as="h3" fontWeight="bold" fontSize="24px"  color="brand.white">{props.books[2].name}</Text>
         </Link></NextLink>
         ) : <Text>{''}</Text>}
         </GridItem>
