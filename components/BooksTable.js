@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Link, Grid, GridItem, Image , Text, Divider } from '@chakra-ui/react';
 import { Table, Tr, Th, Td } from './Table';
-
+import NextLink from 'next/link'
 import BooksRow from './BookRow'
 
 const BooksTable = (props) => {
@@ -27,13 +27,13 @@ const BooksTable = (props) => {
       maxWidth="1250px"
       templateColumns="repeat(auto-fit,minmax(120px,1fr))"
     >
-      <GridItem pos="relative" colSpan={1} bg="tomato">
+      <GridItem pos="relative" colSpan={1} bg="rgb(170, 149, 147)">
         <Image src="https://source.unsplash.com/DhG6wSAtL8o/1200x800" />
         {props.books[0] ? (
          <NextLink href="/library/[libraryId]" as={`/library/${props.books[0].id}`} passHref>
-<Link>
-         <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
-         </Link>
+          <Link>
+          <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
+          </Link>
          </NextLink>
         ) : <Text>{''}</Text>}
       </GridItem>
@@ -46,7 +46,7 @@ const BooksTable = (props) => {
         </Link></NextLink>
         ) : <Text>{''}</Text>}
       </GridItem>
-      <GridItem  pos="relative" colSpan={1} bg="papayawhip">
+      <GridItem  pos="relative" colSpan={1} bg="rgb(152, 185, 194)">
         <Image src="https://source.unsplash.com/mbKApJz6RSU/1200x800" />
          {props.books[2] ? (
          <NextLink href="/library/[libraryId]" as={`/library/${props.books[2].id}`} passHref>

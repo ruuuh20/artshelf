@@ -19,7 +19,7 @@ const DashboardShell = ({ children }) => {
     <Box backgroundColor="#FAF7EB" 
     // h="100vh"
     >
-      <Flex backgroundColor="#214261" mb={16} w="full" color="#FAF7EB">
+      <Flex backgroundColor="#121212" mb={16} w="full" color="#FAF7EB">
         <Flex
           alignItems="center"
           justifyContent="space-between"
