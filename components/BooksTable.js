@@ -21,25 +21,31 @@ const BooksTable = (props) => {
       paddingTop="4rem"
       paddingBottom="4rem"
       margin="0 auto"
-      // h="400px"
+      // h="600px"
       gap={6}
       maxWidth="1250px"
       templateColumns="repeat(auto-fit,minmax(120px,1fr))"
     >
       <GridItem pos="relative" colSpan={1} bg="rgb(170, 149, 147)">
-        {props.books[0] ? (
-         <NextLink href="/book/[bookId]" as={`/book/${props.books[0].id}`} passHref>
-          <Link>
-          <Image src={props.books[0].imageUrl} pos="absolute" width="100px" left="50%" top="50%" transform="translate(-50%, 50%)" />
-          <Text as="h3" fontWeight="bold" fontSize="24px"  color="brand.white">{props.books[0].name}</Text>
-          </Link>
-         </NextLink>
+        <Flex direction="column">
+          <Box pos="relative" height="600px">
+            {props.books[0] ? (
+            <NextLink href="/book/[bookId]" as={`/book/${props.books[0].id}`} passHref>
+              <Link>
+              <Image src={props.books[0].imageUrl} pos="absolute" width="250px" left="50%" top="50%" transform="translate(-50%, -50%)" />
+             
+              </Link>
+            </NextLink>
         ) : <Text>{''}</Text>}
+            </Box>
+             <Text as="h3" fontWeight="bold" fontSize="24px"  color="brand.white">{props.books[0].name}</Text>
+        </Flex>
       </GridItem>
-      <GridItem  pos="relative" colSpan={1} bg="#aa9593">
+      <GridItem  pos="relative" colSpan={1} bg="rgb(155, 163, 153)">
          {props.books[1] ? (
           <NextLink href="/book/[bookId]" as={`/book/${props.books[1].id}`} passHref>
           <Link>
+           <Image src={props.books[1].imageUrl} pos="absolute" width="250px" left="50%" top="50%" transform="translate(-50%, -50%)" />
         <Text marginTop="1rem" as="h3" fontWeight="bold" fontSize="24px"  color="brand.white">{props.books[1].name}</Text>
         </Link></NextLink>
         ) : <Text>{''}</Text>}
@@ -47,7 +53,8 @@ const BooksTable = (props) => {
       <GridItem  pos="relative" colSpan={1} bg="rgb(152, 185, 194)">
          {props.books[2] ? (
          <NextLink href="/book/[bookId]" as={`/book/${props.books[2].id}`} passHref>
-<Link>
+        <Link>
+         <Image src={props.books[2].imageUrl} pos="absolute" width="250px" left="50%" top="50%" transform="translate(-50%, -50%)" />
         <Text marginTop="1rem" as="h3" fontWeight="bold" fontSize="24px"  color="brand.white">{props.books[2].name}</Text>
         </Link></NextLink>
         ) : <Text>{''}</Text>}
