@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Link, Grid, GridItem, Image , Text, Divider } from '@chakra-ui/react';
+import { Box, Link, Grid, GridItem, Image , Text, Divider, Flex } from '@chakra-ui/react';
 import { Table, Tr, Th, Td } from './Table';
 import NextLink from 'next/link'
 import BooksRow from './BookRow'
@@ -26,9 +26,9 @@ const BooksTable = (props) => {
       maxWidth="1250px"
       templateColumns="repeat(auto-fit,minmax(120px,1fr))"
     >
-      <GridItem pos="relative" colSpan={1} bg="rgb(170, 149, 147)">
+      <GridItem pos="relative" colSpan={1}>
         <Flex direction="column">
-          <Box pos="relative" height="600px">
+          <Box pos="relative" height="600px" bg="rgb(170, 149, 147)">
             {props.books[0] ? (
             <NextLink href="/book/[bookId]" as={`/book/${props.books[0].id}`} passHref>
               <Link>
@@ -38,7 +38,7 @@ const BooksTable = (props) => {
             </NextLink>
         ) : <Text>{''}</Text>}
             </Box>
-             <Text as="h3" fontWeight="bold" fontSize="24px"  color="brand.white">{props.books[0].name}</Text>
+          <Text as="h3" fontWeight="bold" fontSize="24px"  color="brand.white">{props.books[0].name}</Text>
         </Flex>
       </GridItem>
       <GridItem  pos="relative" colSpan={1} bg="rgb(155, 163, 153)">
