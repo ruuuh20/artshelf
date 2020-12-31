@@ -98,12 +98,13 @@ const BooksPage = () => {
     };
     inputEl.current.value = '';
     isbnEl.current.value = '';
- pagesEl.current.value = '';
-      otherEl.current.value = '';
-      nameEl.current.value = '';
-      authorEl.current.value = '';
-      user.uid = '';
-       publisherEl.current.value = '';
+    pagesEl.current.value = '';
+    otherEl.current.value = '';
+    nameEl.current.value = '';
+    authorEl.current.value = '';
+    user.uid = '';
+    priceEl.current.value = '';
+    publisherEl.current.value = '';
     // setAllBooks([newBook, ...allBooks]);
     createBook(newBook);
     mutate(

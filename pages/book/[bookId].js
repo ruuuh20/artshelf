@@ -18,7 +18,7 @@ const BookPage = () => {
       <Container maxW="60rem">
         <Flex justifyContent="space-between">
           <Heading fontSize="4rem" mb={8}>{book ? book.name : 'loading'}</Heading>
-           <Text as={p}>{book ? book.description : ''}</Text>
+           <Text>{book ? book.description : ''}</Text>
           <Box size="350px">
             <Image
             width="100%" 

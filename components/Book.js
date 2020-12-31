@@ -9,7 +9,7 @@ const Book = ({ author, description, name, isbn, other, createdAt, settings, ima
       <Image src={imageUrl || "https://via.placeholder.com/200x250"} alt="image" mb={8} />
     </Box>
     <Heading size="sm" as="h3" mb={0} color="gray.900" fontWeight="medium">
-      {name ? name : 'hi'}
+      {name ? name : 'loading'}
     </Heading>
    
    

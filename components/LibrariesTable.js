@@ -33,17 +33,17 @@ const LibrariesTable = ({ libraries }) => {
           {libraries[0] ? (
           <NextLink href="/library/[libraryId]" as={`/library/${libraries[0].id}`} passHref>
             <Link>
-              <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
+              <Text as="h3" textAlign="center" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
             </Link>
           </NextLink>
           ) : <Text as="h4" fontWeight="bold" >no library</Text>}
         </GridItem>
-      <GridItem  pos="relative" colSpan={1} bg="#aa9593">
+        <GridItem  pos="relative" colSpan={1} bg="#aa9593">
         <Image src="https://source.unsplash.com/YLSwjSy7stw/1200x800" />
          {libraries[1] ? (
         <NextLink href="/library/[libraryId]" as={`/library/${libraries[1].id}`} passHref>
         <Link>
-        <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[1].name}</Text>
+        <Text as="h3" textAlign="center" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[1].name}</Text>
         </Link>
         </NextLink>
          ) : <Text as="h4" fontWeight="bold" >no library</Text>}
@@ -53,7 +53,7 @@ const LibrariesTable = ({ libraries }) => {
          {libraries[2] ? (
             <NextLink href="/library/[libraryId]" as={`/library/${libraries[2].id}`} passHref>
         <Link>
-        <Text as="h3" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[2].name}</Text>
+        <Text as="h3" textAlign="center" fontWeight="bold" fontSize="28px" pos="absolute" top="65%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[2].name}</Text>
           </Link>
         </NextLink>
          ) : <Text as="h4" fontWeight="bold" textAlign="center">no library</Text>}
