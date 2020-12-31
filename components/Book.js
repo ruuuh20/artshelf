@@ -19,7 +19,7 @@ const Book = ({ author, description, name, isbn, other, createdAt, settings, ima
       </Text>
     )}
  
-    <Text color="gray.800">{description}</Text>
+    <Text color="gray.800" noOfLines={[1, 2, 3]} isTruncated>{description}</Text>
      </Flex>
     <Divider borderColor="gray.200" backgroundColor="gray.200" mt={8} mb={8} />
   </Box>
