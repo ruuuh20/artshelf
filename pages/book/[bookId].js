@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import fetcher from "@/utils/fetcher";
 import { useRouter } from "next/router";
-import { Container, Heading, Flex, Box, Image, SimpleGrid } from "@chakra-ui/react";
+import { Container, Heading, Flex, Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import DashboardShell from "@/components/DashboardShell";
 
 const BookPage = () => {
