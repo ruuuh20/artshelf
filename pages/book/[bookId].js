@@ -17,25 +17,53 @@ const BookPage = () => {
     <DashboardShell>
       <Container maxW="60rem">
         <Flex justifyContent="space-between">
-          <Heading fontSize="4rem" mb={8}>{book ? book.name : 'loading'}</Heading>
-           <Text>{book ? book.description : ''}</Text>
-          <Box size="350px">
+          { book ? (
+          <>
+          <Box padding="0 10px">
+            <Heading fontSize="4rem" mb={8}>{book.name}</Heading>
+            <Text mb="1rem" textAlign="right" as="i" color="gray.500">{book.author}</Text>
+            <Text>{book.description}</Text>
+          </Box>
+          <Box w="350px">
             <Image
             width="100%" 
-              src={book ? book.imageUrl || "https://via.placeholder.com/400x300" : 'loading'}
+              src={book.imageUrl || "https://via.placeholder.com/400x300"}
             ></Image>
           </Box>
+          </>
+          )
+          : <Text>loading...</Text>
+          
+            }
         </Flex>
-        <Flex>
-          <SimpleGrid minChildWidth="120px" spacing="40px">
-            <Box bg="tomato" height="80px"><Text fontWeight="bold">Pages</Text>
-            <Text>{book ? book.pages : ''}</Text></Box>
-            <Box bg="tomato" height="80px"></Box>
-            <Box bg="tomato" height="80px"></Box>
-            <Box bg="tomato" height="80px"></Box>
-            <Box bg="tomato" height="80px"></Box>
+        <Box>
+          { book ? (
+
+        
+          <SimpleGrid minChildWidth="180px" spacing="40px">
+            <Box padding="10px" height="80px"><Text fontWeight="bold">Pages</Text>
+            <Text>{book.pages}</Text></Box>
+            <Box padding="10px" height="80px">
+              <Text fontWeight="bold">Publisher</Text>
+            <Text>{book.publisher}</Text>
+            </Box>
+            <Box padding="10px" height="80px">
+              <Text fontWeight="bold">Other</Text>
+            <Text>{book.other}</Text>
+            </Box>
+            <Box padding="10px" height="80px">
+              <Text fontWeight="bold">Release year</Text>
+            <Text>---</Text>
+            </Box>
+            <Box padding="10px" height="80px">
+               <Text fontWeight="bold">ISBN</Text>
+            <Text>{book.isbn}</Text>
+            </Box>
           </SimpleGrid>
-        </Flex>
+            )
+            : <Text>'loading...'</Text>
+          }
+        </Box>
       </Container>
     </DashboardShell>
   );
