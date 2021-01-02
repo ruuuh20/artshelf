@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Heading, Text, Divider, Flex, Image, Link } from '@chakra-ui/react';
 import NextLink from 'next/link'
 
-const Book = ({ author, description, name, imageUrl, isLast, provider }) => (
+const Book = ({ id, author, description, name, imageUrl, isLast, provider }) => (
   <Box borderRadius={4} maxWidth="700px" w="full">
     <Flex align="center" justify="center" direction="column">
     <Box width={200}>
@@ -20,8 +20,8 @@ const Book = ({ author, description, name, imageUrl, isLast, provider }) => (
     )}
  
     <Text color="gray.800" noOfLines={[1, 2, 3]} isTruncated>{description}</Text>
-    {book && (  
-       <NextLink href="/book/[bookId]" as={`/book/${book.id}`} passHref><Link><Text color="gray.500" fontSize="xs">View book</Text></Link></NextLink>
+    {id && (  
+       <NextLink href="/book/[bookId]" as={`/book/${id}`} passHref><Link><Text color="gray.500" fontSize="xs">View book</Text></Link></NextLink>
        )
     }
      </Flex>
