@@ -11,7 +11,6 @@ import BooksTableSkeleton from '@/components/BooksTableSkeleton';
 const MyBooks = () => {
   const { user } = useAuth();
   const { data } = useSWR(user ? ['/api/books', user.token] : null, fetcher);
-console.log(data)
   if (!data) {
     return (
       <DashboardShell>

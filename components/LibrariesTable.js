@@ -6,7 +6,6 @@ import NextLink from 'next/link'
 import DeleteLibraryButton from './DeleteLibraryButton'
 
 const LibrariesTable = ({ libraries }) => {
-  console.log(libraries)
   return (
     <>
     <Box

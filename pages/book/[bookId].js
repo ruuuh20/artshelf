@@ -6,12 +6,10 @@ import DashboardShell from "@/components/DashboardShell";
 
 const BookPage = () => {
   const router = useRouter();
-
   const bookId = router.query?.bookId;
   const bookApi = `/api/book/${bookId}`;
   const { data: bookData } = useSWR(bookApi, fetcher);
   const book = bookData?.book;
-  console.log(bookId);
 
   return (
     <DashboardShell>
@@ -20,11 +18,11 @@ const BookPage = () => {
           { book ? (
           <>
           <Box flex="1" paddingRight={["0", "50px", "50px"]} paddingTop={["20px", "0", "0"]}>
-            <Heading mb="0" fontSize={{ base: "24px", md: "40px", lg: "56px" }} mb={8}>{book.name}</Heading>
+            <Heading mb="0" fontSize={{ base: "24px", md: "40px", lg: "56px" }}>{book.name}</Heading>
             <Text mb="1rem" fontSize={{ base: "16px", md: "20px", lg: "24px" }} textAlign="right" as="i" color="gray.500">{book.author}</Text>
             <Text marginTop="2rem" color="gray.800">{book.description}</Text>
           </Box>
-          <Box w="300px">
+          <Box w={["200px", "300px", "300px"]} margin="0 auto">
             <Image
             width="100%" 
               src={book.imageUrl || "https://via.placeholder.com/400x300"}
@@ -33,13 +31,10 @@ const BookPage = () => {
           </>
           )
           : <Text>loading...</Text>
-          
-            }
+          }
         </Flex>
         <Box marginTop="5rem">
           { book ? (
-
-        
           <SimpleGrid columns={[2, null, 3]} spacing="40px">
             <Box padding="10px" height="80px"><Text fontWeight="bold">Pages</Text>
             <Text>{book.pages}</Text></Box>

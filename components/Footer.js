@@ -1,11 +1,11 @@
 import React from 'react';
-import { Center, Square, Circle } from "@chakra-ui/react"
+import { Center } from "@chakra-ui/react"
 
 const Footer = () => {
     return (
        <Center fontSize="12px" h="100px" color="#000">
-  © Artreads 2020
-</Center>
+            © Artreads 2020
+       </Center>
     )
 }
 
