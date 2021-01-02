@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Heading, Text, Divider, Flex, Image } from '@chakra-ui/react';
-import { format, parseISO } from 'date-fns';
+import { Box, Heading, Text, Divider, Flex, Image, Link } from '@chakra-ui/react';
+import NextLink from 'next/link'
 
-const Book = ({ author, description, name, isbn, other, createdAt, settings, imageUrl, isLast, provider }) => (
+const Book = ({ author, description, name, imageUrl, isLast, provider }) => (
   <Box borderRadius={4} maxWidth="700px" w="full">
     <Flex align="center" justify="center" direction="column">
     <Box width={200}>
@@ -13,13 +13,14 @@ const Book = ({ author, description, name, isbn, other, createdAt, settings, ima
     </Heading>
    
    
-      {settings?.timestamp && (
+      {author && (
       <Text color="gray.500" mb={4} fontSize="xs">
-        {format(parseISO(createdAt), 'PPpp')}
+        {author}
       </Text>
     )}
  
     <Text color="gray.800" noOfLines={[1, 2, 3]} isTruncated>{description}</Text>
+    <NextLink href="/book/[bookId]" as={`/book/${props.books[2].id}`} passHref><Link><Text color="gray.500" fontSize="xs">View book</Text></Link></NextLink>
      </Flex>
     <Divider borderColor="gray.200" backgroundColor="gray.200" mt={8} mb={8} />
   </Box>
