@@ -8,6 +8,7 @@ import {
   Icon
 } from '@chakra-ui/react';
 import NextLink from 'next/link'
+import Footer from './Footer'
 
 import { useAuth } from '@/lib/auth';
 import AddLibraryModal from './AddLibraryModal'
@@ -16,7 +17,8 @@ const DashboardShell = ({ children }) => {
   const { user, signout } = useAuth();
 
   return (
-    <Box backgroundColor="#FAF7EB" 
+    <>
+    <Box 
     // h="100vh"
     >
       <Flex backgroundColor="#121212" mb={16} w="full" color="#FAF7EB">
@@ -56,6 +58,8 @@ const DashboardShell = ({ children }) => {
         {children}
       </Flex>
     </Box>
+    <Footer />
+    </>
   );
 };
 

@@ -19,10 +19,10 @@ const BookPage = () => {
         <Flex flexDirection={['column-reverse', 'column-reverse', 'row']} justifyContent="space-between">
           { book ? (
           <>
-          <Box padding="0 10px">
-            <Heading fontSize={{ base: "24px", md: "40px", lg: "56px" }} mb={8}>{book.name}</Heading>
-            <Text mb="1rem" textAlign="right" as="i" color="gray.500">{book.author}</Text>
-            <Text color="gray.900">{book.description}</Text>
+          <Box flex="1" paddingRight={["0", "50px", "50px"]} paddingTop={["20px", "0", "0"]}>
+            <Heading mb="0" fontSize={{ base: "24px", md: "40px", lg: "56px" }} mb={8}>{book.name}</Heading>
+            <Text mb="1rem" fontSize={{ base: "16px", md: "20px", lg: "24px" }} textAlign="right" as="i" color="gray.500">{book.author}</Text>
+            <Text marginTop="2rem" color="gray.800">{book.description}</Text>
           </Box>
           <Box w="300px">
             <Image

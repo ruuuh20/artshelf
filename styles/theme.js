@@ -18,7 +18,7 @@ const theme = {
       100: "#99c1b9",
       yellow: "#DBBD7F",
       blue: "#214261",
-      white: "#FAF7EB",
+      white: "#ffffff",
       green: "rgb(155, 163, 153)"
     }
   },
