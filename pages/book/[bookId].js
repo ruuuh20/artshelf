@@ -16,15 +16,15 @@ const BookPage = () => {
   return (
     <DashboardShell>
       <Container maxW="60rem">
-        <Flex justifyContent="space-between">
+        <Flex flexDirection={['column-reverse', 'column-reverse', 'row']} justifyContent="space-between">
           { book ? (
           <>
           <Box padding="0 10px">
-            <Heading fontSize="4rem" mb={8}>{book.name}</Heading>
+            <Heading fontSize={{ base: "24px", md: "40px", lg: "56px" }} mb={8}>{book.name}</Heading>
             <Text mb="1rem" textAlign="right" as="i" color="gray.500">{book.author}</Text>
-            <Text>{book.description}</Text>
+            <Text color="gray.900">{book.description}</Text>
           </Box>
-          <Box w="350px">
+          <Box w="300px">
             <Image
             width="100%" 
               src={book.imageUrl || "https://via.placeholder.com/400x300"}
@@ -36,11 +36,11 @@ const BookPage = () => {
           
             }
         </Flex>
-        <Box>
+        <Box marginTop="5rem">
           { book ? (
 
         
-          <SimpleGrid minChildWidth="180px" spacing="40px">
+          <SimpleGrid columns={[2, null, 3]} spacing="40px">
             <Box padding="10px" height="80px"><Text fontWeight="bold">Pages</Text>
             <Text>{book.pages}</Text></Box>
             <Box padding="10px" height="80px">
