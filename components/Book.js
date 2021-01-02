@@ -20,7 +20,7 @@ const Book = ({ author, description, name, imageUrl, isLast, provider }) => (
     )}
  
     <Text color="gray.800" noOfLines={[1, 2, 3]} isTruncated>{description}</Text>
-    <NextLink href="/book/[bookId]" as={`/book/${props.books[2].id}`} passHref><Link><Text color="gray.500" fontSize="xs">View book</Text></Link></NextLink>
+    <NextLink href="/book/[bookId]" as={`/book/${book.id}`} passHref><Link><Text color="gray.500" fontSize="xs">View book</Text></Link></NextLink>
      </Flex>
     <Divider borderColor="gray.200" backgroundColor="gray.200" mt={8} mb={8} />
   </Box>
