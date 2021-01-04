@@ -74,15 +74,15 @@ const DashboardShell = ({ children }) => {
         <Flex
           alignItems="center"
           justifyContent="space-between"
-          pt={4}
-          pb={4}
+          pt="1.2rem"
+          pb="1.2rem"
           maxW="1250px"
           margin="0 auto"
           w="full"
           px={8}
           backgroundColor="#fff"
         >
-          <Flex>
+          <Flex alignItems="center">
             <NextLink href="/" passHref>
             <Logo />
             </NextLink>
@@ -95,7 +95,7 @@ const DashboardShell = ({ children }) => {
           </Flex>
           <Flex justifyContent="center" alignItems="center">
             { user && (
-            <Button color="brand.white" variant="link" mr={2} onClick={() => signout()}>
+            <Button color="gray.900" variant="link" mr={2} onClick={() => signout()}>
               Log Out
             </Button>
             )}
@@ -107,12 +107,13 @@ const DashboardShell = ({ children }) => {
           margin="0 auto"
            w="full"
            height="350px"
+           overflow="hidden"
           >
-              <Image src="/hero.jpg" width="100%"  />
+              <Image src="/banner.jpg" width="100%"  />
 
         </Box>
       </Flex>
-      <Flex margin="0 auto" direction="column" maxW="1250px" px={8} bg="#fff">
+      <Flex margin="0 auto" direction="column" maxW="1250px" px={8} pt="80px" bg="#fff">
         
         {children}
       </Flex>

@@ -18,7 +18,7 @@ const BooksTableHeader = ({ libraryName }) => (
       </BreadcrumbItem>
     </Breadcrumb>
     <Flex justifyContent="space-between">
-      <Heading mb={8}>All Books</Heading>
+      <Heading fontSize="2rem" mb={8}>All Books</Heading>
     </Flex>
   </>
 );
