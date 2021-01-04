@@ -5,7 +5,7 @@ import {
   Flex,
   Link,
   Avatar,
-  Image
+  Image,
   Icon,
   Center
 } from '@chakra-ui/react';
