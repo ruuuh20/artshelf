@@ -121,3 +121,7 @@
     flex-direction: column;
   }
 }
+
+svg.logo-svg {
+  overflow: visible;
+}

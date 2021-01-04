@@ -15,33 +15,51 @@ import Footer from './Footer'
 import { useAuth } from '@/lib/auth';
 
 export const Logo = () => (
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.87 21.94">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.45 13.6" className="logo-svg">
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
       <text
-        transform="translate(0 11.29)"
+        transform="translate(0 11.05)"
         fontSize="{13}"
         fill="#231f20"
-        fontFamily="AktivGrotesk-Hair, Aktiv Grotesk"
+        fontFamily="Interstate-ExtraLight, Interstate"
+        fontWeight="{200}"
         letterSpacing="-0.03em"
       >
         a
-        <tspan x="6.2" y="{0}" letterSpacing="-0.01em">r</tspan>
-        <tspan x="10.37" y="{0}" letterSpacing="-0.03em">t</tspan>
-      </text>
-      <text
-        transform="translate(14.78 11.14)"
-        fontSize="{13}"
-        fill="#231f20"
-        fontFamily="AktivGrotesk-Regular, Aktiv Grotesk"
-        letterSpacing="-0.06em"
-      >
-        r
-        <tspan x="3.93" y="{0}" letterSpacing="-0.03em">eads</tspan>
+        <tspan x="6.47" y="{0}" letterSpacing="-0.02em">r</tspan>
+        <tspan x="11.31" y="{0}" letterSpacing="-0.03em">t</tspan>
+        <tspan
+          x="15.39"
+          y="{0}"
+          fontFamily="Interstate-Regular, Interstate"
+          fontWeight="{400}"
+          letterSpacing="-0.06em"
+        >
+          r
+        </tspan>
+        <tspan
+          x="20.06"
+          y="{0}"
+          fontFamily="Interstate-Regular, Interstate"
+          fontWeight="{400}"
+          letterSpacing="-0.04em"
+        >
+          e
+        </tspan>
+        <tspan
+          x="26.73"
+          y="{0}"
+          fontFamily="Interstate-Regular, Interstate"
+          fontWeight="{400}"
+        >
+          ads
+        </tspan>
       </text>
     </g>
   </g>
 </svg>
+
 )
 
 const DashboardShell = ({ children }) => {
@@ -84,8 +102,13 @@ const DashboardShell = ({ children }) => {
             <Avatar size="sm" src={user?.photoUrl} />
           </Flex>
         </Flex>
-        <Box>
-              <Image src="/hero.jpg" width="100%" height="350px" />
+        <Box
+         maxW="1250px"
+          margin="0 auto"
+           w="full"
+           height="350px"
+          >
+              <Image src="/hero.jpg" width="100%"  />
 
         </Box>
       </Flex>
