@@ -6,8 +6,10 @@ import {
   Link,
   Avatar,
   Icon,
+  Center
 } from '@chakra-ui/react';
 import NextLink from 'next/link'
+import Image from 'next/image'
 import Footer from './Footer'
 
 import { useAuth } from '@/lib/auth';
@@ -20,7 +22,7 @@ const DashboardShell = ({ children }) => {
     <Box 
     // h="100vh"
     >
-      <Flex pb={16} w="full" color="gray.900">
+      <Flex flexDirection="column" w="full" color="gray.900">
         <Flex
           alignItems="center"
           justifyContent="space-between"
@@ -34,7 +36,7 @@ const DashboardShell = ({ children }) => {
         >
           <Flex>
             <NextLink href="/" passHref>
-            <Icon name="logo" size="24px" mr={8} />
+            <Image src='./logo.svg' alt='logo' />
             </NextLink>
              <NextLink href="/dashboard" passHref>
             <Link mr={4}>Libraries</Link>
@@ -52,6 +54,10 @@ const DashboardShell = ({ children }) => {
             <Avatar size="sm" src={user?.photoUrl} />
           </Flex>
         </Flex>
+        <Center h="100px">
+              <Image src="/hero.jpg" width="100%" />
+
+        </Center>
       </Flex>
       <Flex margin="0 auto" direction="column" maxW="1250px" px={8} bg="#fff">
         
