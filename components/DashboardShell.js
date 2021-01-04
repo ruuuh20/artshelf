@@ -5,7 +5,8 @@ import {
   Flex,
   Link,
   Avatar,
-  Icon
+  Icon,
+  Container
 } from '@chakra-ui/react';
 import NextLink from 'next/link'
 import Footer from './Footer'
@@ -54,8 +55,10 @@ const DashboardShell = ({ children }) => {
         </Flex>
       </Flex>
       <Flex margin="0 auto" direction="column" maxW="1250px" px={8}>
+        <Container>
         
         {children}
+        </Container>
       </Flex>
     </Box>
     <Footer />

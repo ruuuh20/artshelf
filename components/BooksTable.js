@@ -29,58 +29,58 @@ const BooksTable = (props) => {
       <GridItem padding=".5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
         {props.books[0] ? (
         <Flex direction="column">
-            <NextLink href="/book/[bookId]" as={`/book/${props.books[0].id}`} _hover={{ opacity: '.5' }} passHref>
+            <NextLink href="/book/[bookId]" as={`/book/${props.books[0].id}`} passHref>
               <Link>
-            <Box pos="relative" height="300px" bg="rgb(170, 149, 147)">
-              <Image src={props.books[0].imageUrl} pos="absolute" width="200px" left="50%" top="50%" transform="translate(-50%, -50%)" />
+            <Box pos="relative" height="300px" bg="rgb(170, 149, 147, .5)" _hover={{ opacity: '.5' }}>
+              <Image src={props.books[0].imageUrl} pos="absolute" width="140px" left="50%" top="50%" transform="translate(-50%, -50%)" />
              </Box>
               </Link>
             </NextLink>
           <Text as="h3" marginTop="1rem" fontWeight="bold" fontSize="16px">{props.books[0].name}</Text>
-         <Text as="sub">{props.books[0].author}</Text>
+         <Text mt=".5rem" color="gray.600" as="sub">{props.books[0].author}</Text>
          </Flex>
         ) : <Text>{''}</Text>}
       </GridItem>
       <GridItem padding=".5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
         {props.books[1] ? (
         <Flex direction="column">
-          <NextLink href="/book/[bookId]" as={`/book/${props.books[1].id}`} _hover={{ opacity: '.5' }} passHref>
+          <NextLink href="/book/[bookId]" as={`/book/${props.books[1].id}`} passHref>
           <Link>
-          <Box pos="relative" height="300px" bg="rgb(155, 163, 153)">
-           <Image src={props.books[1].imageUrl} pos="absolute" width="200px" left="50%" top="50%" transform="translate(-50%, -50%)" />
+          <Box pos="relative" height="300px" bg="rgb(155, 163, 153, .5)" _hover={{ opacity: '.5' }}>
+           <Image src={props.books[1].imageUrl} pos="absolute" width="140px" left="50%" top="50%" transform="translate(-50%, -50%)" />
           </Box>
           </Link>
         </NextLink>
          <Text marginTop="1rem" as="h3" fontWeight="bold" fontSize="16px">{props.books[1].name}</Text>
-         <Text as="sub">{props.books[1].author}</Text></Flex>
+         <Text mt=".5rem" color="gray.600" as="sub">{props.books[1].author}</Text></Flex>
         ) : <Text>{''}</Text>}
       </GridItem>
       <GridItem padding=".5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
          {props.books[2] ? (
          <Flex direction="column">
-         <NextLink href="/book/[bookId]" as={`/book/${props.books[2].id}`} _hover={{ opacity: '.5' }} passHref>
+         <NextLink href="/book/[bookId]" as={`/book/${props.books[2].id}`} passHref>
         <Link>
-        <Box pos="relative" height="300px" bg="rgb(152, 185, 194)">
-         <Image src={props.books[2].imageUrl} pos="absolute" width="200px" left="50%" top="50%" transform="translate(-50%, -50%)" />
+        <Box pos="relative" height="300px" bg="rgb(152, 185, 194, .5)" _hover={{ opacity: '.5' }}>
+         <Image src={props.books[2].imageUrl} pos="absolute" width="140px" left="50%" top="50%" transform="translate(-50%, -50%)" />
          </Box>
         </Link>
         </NextLink>
-        <Text marginTop="1rem" as="h3" fontWeight="bold" fontSize="16px">{props.books[2].name}</Text> <Text as="sub">sub</Text>
-         <Text as="sub">{props.books[2].author}</Text></Flex>
+        <Text marginTop="1rem" as="h3" fontWeight="bold" fontSize="16px">{props.books[2].name}</Text>
+         <Text mt=".5rem" color="gray.600" as="sub">{props.books[2].author}</Text></Flex>
         ) : <Text>{''}</Text>}
       </GridItem>
       <GridItem padding=".5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
         {props.books[3] ? (
         <Flex direction="column">
-          <NextLink href="/book/[bookId]" as={`/book/${props.books[3].id}`} _hover={{ opacity: '.5' }} passHref>
+          <NextLink href="/book/[bookId]" as={`/book/${props.books[3].id}`} passHref>
             <Link>
-              <Box pos="relative" height="300px" bg="rgb(170, 149, 147)">
-              <Image src={props.books[3].imageUrl} pos="absolute" width="200px" left="50%" top="50%" transform="translate(-50%, -50%)" />
+              <Box pos="relative" height="300px" bg="rgb(170, 149, 147)" _hover={{ opacity: '.5' }}>
+              <Image src={props.books[3].imageUrl} pos="absolute" width="140px" left="50%" top="50%" transform="translate(-50%, -50%)" />
               </Box>
             </Link>
           </NextLink>
           <Text as="h3" marginTop="1rem" fontWeight="bold" fontSize="16px">{props.books[3].name}</Text>
-           <Text as="sub">{props.books[3].author}</Text>
+           <Text mt=".5rem" color="gray.600" as="sub">{props.books[3].author}</Text>
         </Flex>
         ) : <Text>{''}</Text>}
       </GridItem>
