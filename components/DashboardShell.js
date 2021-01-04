@@ -6,13 +6,11 @@ import {
   Link,
   Avatar,
   Icon,
-  Container
 } from '@chakra-ui/react';
 import NextLink from 'next/link'
 import Footer from './Footer'
 
 import { useAuth } from '@/lib/auth';
-import AddLibraryModal from './AddLibraryModal'
 
 const DashboardShell = ({ children }) => {
   const { user, signout } = useAuth();
@@ -22,7 +20,7 @@ const DashboardShell = ({ children }) => {
     <Box 
     // h="100vh"
     >
-      <Flex backgroundColor="#121212" mb={16} w="full" color="#FAF7EB">
+      <Flex pb={16} w="full" color="gray.900">
         <Flex
           alignItems="center"
           justifyContent="space-between"
@@ -32,6 +30,7 @@ const DashboardShell = ({ children }) => {
           margin="0 auto"
           w="full"
           px={8}
+          backgroundColor="#fff"
         >
           <Flex>
             <NextLink href="/" passHref>
@@ -54,11 +53,9 @@ const DashboardShell = ({ children }) => {
           </Flex>
         </Flex>
       </Flex>
-      <Flex margin="0 auto" direction="column" maxW="1250px" px={8}>
-        <Container>
+      <Flex margin="0 auto" direction="column" maxW="1250px" px={8} bg="#fff">
         
         {children}
-        </Container>
       </Flex>
     </Box>
     <Footer />

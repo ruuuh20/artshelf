@@ -26,7 +26,7 @@ const BooksTable = (props) => {
       maxWidth="1250px"
       templateColumns="repeat(auto-fit,minmax(120px,1fr))"
     >
-      <GridItem padding=".5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
+      <GridItem padding=".5rem .5rem 1.75rem .5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
         {props.books[0] ? (
         <Flex direction="column">
             <NextLink href="/book/[bookId]" as={`/book/${props.books[0].id}`} passHref>
@@ -41,7 +41,7 @@ const BooksTable = (props) => {
          </Flex>
         ) : <Text>{''}</Text>}
       </GridItem>
-      <GridItem padding=".5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
+      <GridItem padding=".5rem .5rem 1.75rem .5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
         {props.books[1] ? (
         <Flex direction="column">
           <NextLink href="/book/[bookId]" as={`/book/${props.books[1].id}`} passHref>
@@ -55,7 +55,7 @@ const BooksTable = (props) => {
          <Text mt=".5rem" color="gray.600" as="sub">{props.books[1].author}</Text></Flex>
         ) : <Text>{''}</Text>}
       </GridItem>
-      <GridItem padding=".5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
+      <GridItem padding=".5rem .5rem 1.75rem .5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
          {props.books[2] ? (
          <Flex direction="column">
          <NextLink href="/book/[bookId]" as={`/book/${props.books[2].id}`} passHref>
@@ -69,7 +69,7 @@ const BooksTable = (props) => {
          <Text mt=".5rem" color="gray.600" as="sub">{props.books[2].author}</Text></Flex>
         ) : <Text>{''}</Text>}
       </GridItem>
-      <GridItem padding=".5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
+      <GridItem padding=".5rem .5rem 1.75rem .5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
         {props.books[3] ? (
         <Flex direction="column">
           <NextLink href="/book/[bookId]" as={`/book/${props.books[3].id}`} passHref>
