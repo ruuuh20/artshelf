@@ -5,11 +5,12 @@ import {
   Flex,
   Link,
   Avatar,
+  Image
   Icon,
   Center
 } from '@chakra-ui/react';
 import NextLink from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Footer from './Footer'
 
 import { useAuth } from '@/lib/auth';
