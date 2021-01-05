@@ -12,6 +12,7 @@ import {
 import NextLink from 'next/link'
 // import Image from 'next/image'
 import Footer from './Footer'
+import { useRouter } from 'next/router';
 
 import { useAuth } from '@/lib/auth';
 
@@ -60,11 +61,12 @@ export const Logo = () => (
     </g>
   </g>
 </svg>
-
 )
 
 const DashboardShell = ({ children }) => {
   const { user, signout } = useAuth();
+  const router = useRouter();
+  const showBanner= router.pathname === '/dashboard' ? true : false;
 
   return (
     <>
@@ -103,19 +105,21 @@ const DashboardShell = ({ children }) => {
             <Avatar size="sm" src={user?.photoUrl} />
           </Flex>
         </Flex>
+        {showBanner && (
         <Box
-         maxW="1250px"
+          maxW="1250px"
           margin="0 auto"
-           w="full"
-           height="350px"
-           overflow="hidden"
-          >
-              <Image src="/banner.jpg" width="100%"  />
-
+          w="full"
+          height="350px"
+          overflow="hidden"
+        >
+          <Image src="/hero.jpg" width="100%" transform="translateY(-170px)" />
         </Box>
+        )
+        }
+        
       </Flex>
       <Flex margin="0 auto" direction="column" maxW="1250px" px={8} pt="80px" bg="#fff">
-        
         {children}
       </Flex>
     </Box>
