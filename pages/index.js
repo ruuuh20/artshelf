@@ -105,7 +105,7 @@ export default function Home( { allBooks , library }) {
         />
         <title>Artreads</title>
       </Head>
-       <img className="logo-png" src="/logopng.png" />
+       <Logo />
        
         <Text mt={1}>A place to catalog your art books.</Text>
         {auth.user ? (
