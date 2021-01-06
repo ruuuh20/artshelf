@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: "Barlow", Monaco, Lucida Console, Liberation Mono,
     DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  overflow: auto;
 }
 
 a {
@@ -28,4 +29,8 @@ svg {
 .logo-svg {
   width: 30%;
   margin-right: 30px;
+}
+
+.logo-png {
+  width: 100%;
 }

@@ -105,21 +105,21 @@ export default function Home( { allBooks , library }) {
         />
         <title>Artreads</title>
       </Head>
-       <Logo />
+       <img className="logo-png" src="/logopng.png" />
        
         <Text mt={1}>A place to catalog your art books.</Text>
         {auth.user ? (
           <Button as="a" href="/dashboard">Dashboard</Button>
         ) : (
-          <Stack width="500px" flexDirection="row" justifyContent="space-evenly" alignItems="center" mt={4} textAlign="center"> 
+          <Stack width="500px" flexDirection="row" justifyContent="space-evenly" alignItems="center" mt={5} textAlign="center"> 
           <Box>
-            <Link textDecoration="underline" href='/login'>
-                <a>Login with email</a>
+            <Link href='/login'>
+                <a textDecoration="underline">Login with email</a>
             </Link>
           </Box>
           <Box>
-            <Link textDecoration="underline" href='/signup'>
-                  <a>Sign up with email</a>
+            <Link href='/signup'>
+                  <a textDecoration="underline">Sign up with email</a>
             </Link>
             <br />
             <Button
@@ -128,7 +128,7 @@ export default function Home( { allBooks , library }) {
                 color="gray.900"
                 variant="outline"
                 border="2px"
-                borderColor="#484AB3"
+                borderColor="brand.blue"
                 mt={3}
                 size="sm"
                 _hover={{ bg: 'gray.100' }}
