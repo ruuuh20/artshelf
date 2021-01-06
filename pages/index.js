@@ -7,7 +7,6 @@ import { Box, Stack, Button, Heading, Text, Code, Flex } from '@chakra-ui/react'
 import { Camera } from 'react-feather';
 import { getAllBooks, getLibrary } from '@/lib/db-admin';
 import Book from '@/components/Book';
-import BookLink from '@/components/BookLink';
 
 const LIB_ID = '9TRU3Q9SKpIGVCU0vxz4';
 
@@ -24,6 +23,56 @@ export async function getStaticProps(context) {
   };
 }
 
+export const Logo = () => (
+<NextLink href="/">
+<a>
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.45 13.6">
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <text
+        transform="translate(0 11.05)"
+        fontSize="{13}"
+        fill="#231f20"
+        fontFamily="Interstate-ExtraLight, Interstate"
+        fontWeight="{200}"
+        letterSpacing="-0.03em"
+      >
+        a
+        <tspan x="6.47" y="{0}" letterSpacing="-0.02em">r</tspan>
+        <tspan x="11.31" y="{0}" letterSpacing="-0.03em">t</tspan>
+        <tspan
+          x="15.39"
+          y="{0}"
+          fontFamily="Interstate-Regular, Interstate"
+          fontWeight="{400}"
+          letterSpacing="-0.06em"
+        >
+          r
+        </tspan>
+        <tspan
+          x="20.06"
+          y="{0}"
+          fontFamily="Interstate-Regular, Interstate"
+          fontWeight="{400}"
+          letterSpacing="-0.04em"
+        >
+          e
+        </tspan>
+        <tspan
+          x="26.73"
+          y="{0}"
+          fontFamily="Interstate-Regular, Interstate"
+          fontWeight="{400}"
+        >
+          ads
+        </tspan>
+      </text>
+    </g>
+  </g>
+</svg>  
+</a>
+</NextLink>
+)
 
 export default function Home( { allBooks , library }) {
 
@@ -49,12 +98,9 @@ export default function Home( { allBooks , library }) {
             `
           }}
         />
-        <title>Artshelf app</title>
+        <title>Artreads</title>
       </Head>
-
-        <Heading as="h1" size="4xl"
-        fontWeight="normal">Artshelf</Heading>
-<Camera />
+       <Logo />
         <Text>
           Current user: <Code>{auth.user ? auth.user.email : 'None'}</Code>
         </Text>
@@ -62,45 +108,23 @@ export default function Home( { allBooks , library }) {
         {auth.user ? (
           <Button as="a" href="/dashboard">Dashboard</Button>
         ) : (
-<Button mt={4} size="sm" onClick={(e) => auth.signinWithGitHub()}>Sign in</Button>
-        )}
-      
-        <div>
-          {auth?.user?.email}
-        </div>
-        {auth.user ? (
-           <Button
-            as="a"
-            href="/dashboard"
-            backgroundColor="white"
-            color="#484AB3"
-            variant="outline"
-            border="2px"
-            borderColor="#484AB3"
-            fontWeight="medium"
-            mt={4}
-            size="lg"
-            _hover={{ bg: 'gray.100' }}
-            _active={{
-              bg: 'gray.100',
-              transform: 'scale(0.95)'
-            }}
-          >
-            View Dashboard
-          </Button>
-        ) : (
           <Stack> 
-            <Button
+          <Link href='/login'>
+              <a>Login with email</a>
+          </Link>
+          <Link href='/signup'>
+                <a>Sign up with email</a>
+          </Link>
+          <Button
               onClick={(e) => auth.signinWithGoogle()}
               backgroundColor="white"
               color="gray.900"
               variant="outline"
-              // fontWeight="medium"
-              leftIcon="google"
-               border="2px"
-            borderColor="#484AB3"
+    
+              border="2px"
+              borderColor="#484AB3"
               mt={4}
-              size="lg"
+              size="md"
               _hover={{ bg: 'gray.100' }}
               _active={{
                 bg: 'gray.100',
@@ -108,21 +132,15 @@ export default function Home( { allBooks , library }) {
               }}
             >
               Sign In with Google
-            </Button>
-            <Link href='/login'>
-              <a>Login with emaill</a>
-            </Link>
-            <Link href='/signup'>
-              <a>Sign up with emaill</a>
-            </Link>
+          </Button>
           </Stack>
-          )
-          }
-  
+        )
+        }
+          
     </Flex>
     </Box>
 
-      <Box
+      {/* <Box
         display="flex"
         flexDirection="column"
         width="full"
@@ -130,9 +148,7 @@ export default function Home( { allBooks , library }) {
         margin="0 auto"
         mt={8}
       >
-        <BookLink paths={[LIB_ID]} 
-        // siteId={LIB_ID} 
-        />
+  
         {allBooks.map((book, index) => (
           <Book 
           key={book.id}
@@ -141,7 +157,7 @@ export default function Home( { allBooks , library }) {
           {...book} />
         ))
       }
-      </Box>
+      </Box> */}
       </>
   )
 }

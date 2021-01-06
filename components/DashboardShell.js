@@ -6,8 +6,6 @@ import {
   Link,
   Avatar,
   Image,
-  Icon,
-  Center
 } from '@chakra-ui/react';
 import NextLink from 'next/link'
 // import Image from 'next/image'
@@ -17,6 +15,8 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/lib/auth';
 
 export const Logo = () => (
+<NextLink href="/">
+<a>
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.45 13.6" className="logo-svg">
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
@@ -60,7 +60,9 @@ export const Logo = () => (
       </text>
     </g>
   </g>
-</svg>
+</svg>  
+</a>
+</NextLink>
 )
 
 const DashboardShell = ({ children }) => {

@@ -3,7 +3,7 @@ import { Box, Heading, Text, Divider, Flex, Image, Link } from '@chakra-ui/react
 import NextLink from 'next/link'
 
 const Book = ({ id, author, description, name, imageUrl, isLast, provider }) => (
-  <Box borderRadius={4} maxWidth="700px" w="full">
+  <Box borderRadius={4} maxWidth="700px" w="full" padding="1rem" >
     <Flex align="center" justify="center" direction="column">
     <Box width={200}>
       <Image src={imageUrl || "https://via.placeholder.com/200x250"} alt="image" mb={8} />

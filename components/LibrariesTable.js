@@ -9,12 +9,12 @@ const LibrariesTable = ({ libraries }) => {
   return (
     <>
     <Box
-      width="100vw"
-      bgColor="rgb(59, 55, 79)"
-      left="50%"
-      right="50%"
-      marginLeft="-50vw"
-      marginRight="-50vw"
+      // width="100vw"
+      // bgColor="rgb(59, 55, 79, .3)"
+      // left="50%"
+      // right="50%"
+      // marginLeft="-50vw"
+      // marginRight="-50vw"
       marginBottom="5rem"
       position="relative"
     > 
@@ -58,7 +58,7 @@ const LibrariesTable = ({ libraries }) => {
          ) : <Text as="h4" fontWeight="bold" textAlign="center">no library</Text>}
         </GridItem>
       </Grid>
-      <Divider />
+   
       </Box>
     <Table>
       <thead>

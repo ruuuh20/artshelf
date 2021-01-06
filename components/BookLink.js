@@ -7,7 +7,7 @@ export default function BookLink({ libraryId }) {
         Leave a comment →
       </Link>
       <Link fontSize="xs" color="blackAlpha.500" href="/">
-        Powered by Fast Feedback
+       
       </Link>
     </Flex>
   );
