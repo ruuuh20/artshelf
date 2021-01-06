@@ -24,7 +24,7 @@ export async function getStaticProps(context) {
 }
 
 export const Logo = () => (
-<NextLink href="/">
+<Link href="/">
 <a>
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.45 13.6">
   <g id="Layer_2" data-name="Layer 2">
@@ -71,7 +71,7 @@ export const Logo = () => (
   </g>
 </svg>  
 </a>
-</NextLink>
+</Link>
 )
 
 export default function Home( { allBooks , library }) {
