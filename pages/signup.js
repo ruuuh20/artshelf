@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { Mail } from 'react-feather';
 
 import { useAuth } from '@/lib/auth';
 
@@ -37,7 +38,7 @@ const Signup = () => {
   };
 
   return (
-    <Flex align="center" justify="center" h="100vh" backgroundColor="gray.100">
+    <Flex align="center" justify="center" h="100vh" backgroundColor="rgb(249, 247, 238)">
       <Stack
         as="form"
         backgroundColor="white"
@@ -54,7 +55,7 @@ const Signup = () => {
       >
         <Flex justify="center">
           <Box as="a" href="/" aria-label="Back to homepage">
-            <Icon color="black" name="logo" size="64px" mb={4} />
+            <Mail size={48} mb={4} />
           </Box>
         </Flex>
         <FormControl isInvalid={errors.email && errors.email.message}>
@@ -91,7 +92,7 @@ const Signup = () => {
         <Button
           id="login"
           type="submit"
-          backgroundColor="gray.900"
+          backgroundColor="brand.blue"
           color="white"
           isLoading={loading}
           fontWeight="medium"

@@ -80,7 +80,7 @@ export default function Home( { allBooks , library }) {
   
   return (
     <>
-    <Box color="#484AB3">
+    <Box color="brand.blue">
     <Flex
       as="main"
       direction="column"
@@ -107,7 +107,7 @@ export default function Home( { allBooks , library }) {
       </Head>
        <Logo />
        
-        <Text>A place to catalog your art books.</Text>
+        <Text mt={1}>A place to catalog your art books.</Text>
         {auth.user ? (
           <Button as="a" href="/dashboard">Dashboard</Button>
         ) : (
@@ -121,6 +121,7 @@ export default function Home( { allBooks , library }) {
             <Link textDecoration="underline" href='/signup'>
                   <a>Sign up with email</a>
             </Link>
+            <br />
             <Button
                 onClick={(e) => auth.signinWithGoogle()}
                 backgroundColor="white"
