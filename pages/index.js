@@ -26,7 +26,7 @@ export async function getStaticProps(context) {
 export const Logo = () => (
 <Link href="/">
 <a>
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.45 13.6">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.45 13.6" className="main-logo">
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
       <text
@@ -86,7 +86,12 @@ export default function Home( { allBooks , library }) {
       direction="column"
       align="center"
       justify="center"
-      h="80vh"
+      h="100vh"
+      maxW="1250px"
+      margin="0 auto"
+      w="full"
+      px={8}
+      backgroundColor="#fff"
     >
       <Head>
            <script
@@ -101,38 +106,39 @@ export default function Home( { allBooks , library }) {
         <title>Artreads</title>
       </Head>
        <Logo />
-        <Text>
-          Current user: <Code>{auth.user ? auth.user.email : 'None'}</Code>
-        </Text>
+       
         <Text>A place to catalog your art books.</Text>
         {auth.user ? (
           <Button as="a" href="/dashboard">Dashboard</Button>
         ) : (
-          <Stack> 
-          <Link href='/login'>
-              <a>Login with email</a>
-          </Link>
-          <Link href='/signup'>
-                <a>Sign up with email</a>
-          </Link>
-          <Button
-              onClick={(e) => auth.signinWithGoogle()}
-              backgroundColor="white"
-              color="gray.900"
-              variant="outline"
-    
-              border="2px"
-              borderColor="#484AB3"
-              mt={4}
-              size="md"
-              _hover={{ bg: 'gray.100' }}
-              _active={{
-                bg: 'gray.100',
-                transform: 'scale(0.95)'
-              }}
-            >
-              Sign In with Google
-          </Button>
+          <Stack width="500px" flexDirection="row" justifyContent="space-evenly" alignItems="center" mt={4} textAlign="center"> 
+          <Box>
+            <Link textDecoration="underline" href='/login'>
+                <a>Login with email</a>
+            </Link>
+          </Box>
+          <Box>
+            <Link textDecoration="underline" href='/signup'>
+                  <a>Sign up with email</a>
+            </Link>
+            <Button
+                onClick={(e) => auth.signinWithGoogle()}
+                backgroundColor="white"
+                color="gray.900"
+                variant="outline"
+                border="2px"
+                borderColor="#484AB3"
+                mt={3}
+                size="sm"
+                _hover={{ bg: 'gray.100' }}
+                _active={{
+                  bg: 'gray.100',
+                  transform: 'scale(0.95)'
+                }}
+              >
+                Sign In with Google
+            </Button>
+          </Box>
           </Stack>
         )
         }

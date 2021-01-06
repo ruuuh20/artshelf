@@ -17,8 +17,15 @@ a {
   -webkit-font-smoothing: antialiased;
 }
 
-svg.logo-svg {
+svg {
   overflow: visible;
+}
+
+.main-logo {
+  width: 50%;
+  margin: 0 auto;
+}
+.logo-svg {
   width: 30%;
   margin-right: 30px;
 }
