@@ -24,7 +24,7 @@ const BooksTable = (props) => {
       // h="600px"
      
       maxWidth="1250px"
-      templateColumns="repeat(auto-fit,minmax(320px,1fr))"
+      templateColumns="repeat(auto-fit,minmax(240px,1fr))"
     >
       <GridItem padding=".5rem .5rem 1.75rem .5rem" border="1px solid #ededeb" pos="relative" colSpan={1}>
         {props.books[0] ? (
@@ -85,7 +85,6 @@ const BooksTable = (props) => {
         ) : <Text>{''}</Text>}
       </GridItem>
       </Grid>
-      <Divider />
       </Box>
     
     <Table size="lg">
@@ -94,7 +93,7 @@ const BooksTable = (props) => {
           <Th>-</Th>
           <Th color="brand.blue" width="150px">Title</Th>
           <Th color="brand.blue" width="120px">Author</Th>
-          <Th color="brand.blue">Description</Th>
+          <Th color="brand.blue">overview</Th>
           <Th color="brand.blue">Publisher/Series</Th>
         
           <Th color="brand.blue">Available</Th>

@@ -24,7 +24,7 @@ const LibrariesTable = ({ libraries }) => {
         // h="400px"
         gap={6}
         maxWidth="1250px"
-        templateColumns="repeat(auto-fit,minmax(120px,1fr))"
+        templateColumns="repeat(auto-fit,minmax(320px,1fr))"
       >
         <GridItem pos="relative" colSpan={1} bg="gray.300" padding="1rem">
           {libraries[0] ? (
