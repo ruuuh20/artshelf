@@ -26,13 +26,13 @@ const LibrariesTable = ({ libraries }) => {
         maxWidth="1250px"
         templateColumns="repeat(auto-fit,minmax(120px,1fr))"
       >
-        <GridItem pos="relative" colSpan={1} bg="gray.100" padding="1rem">
+        <GridItem pos="relative" colSpan={1} bg="gray.300" padding="1rem">
           {libraries[0] ? (
           <>
           <Image src="https://source.unsplash.com/DhG6wSAtL8o/1200x800" />
           <NextLink href="/library/[libraryId]" as={`/library/${libraries[0].id}`} passHref>
             <Link>
-              <Text as="h3" textAlign="center" fontWeight="bold" fontSize="28px" pos="absolute" top="60%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[0].name}</Text>
+            <Text as="h3" textAlign="center" fontWeight="bold" fontSize={["14px", "24px"]} pos="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="brand.white">{libraries[0].name}</Text>
             </Link>
           </NextLink>
           </>
@@ -44,7 +44,7 @@ const LibrariesTable = ({ libraries }) => {
           <Image src="https://source.unsplash.com/YLSwjSy7stw/1200x800" />
           <NextLink href="/library/[libraryId]" as={`/library/${libraries[1].id}`} passHref>
           <Link>
-          <Text as="h3" textAlign="center" fontWeight="bold" fontSize="28px" pos="absolute" top="60%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[1].name}</Text>
+          <Text as="h3" textAlign="center" fontWeight="bold" fontSize={["14px", "24px"]} pos="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="brand.white">{libraries[1].name}</Text>
           </Link>
           </NextLink>
           </>
@@ -56,7 +56,7 @@ const LibrariesTable = ({ libraries }) => {
           <Image src="https://source.unsplash.com/mbKApJz6RSU/1200x800" />
           <NextLink href="/library/[libraryId]" as={`/library/${libraries[2].id}`} passHref>
           <Link>
-          <Text as="h3" textAlign="center" fontWeight="bold" fontSize="28px" pos="absolute" top="60%" left="50%" transform="translate(-50%, 0%)" color="brand.white">{libraries[2].name}</Text>
+          <Text as="h3" textAlign="center" fontWeight="bold" fontSize={["14px", "24px"]} pos="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="brand.white">{libraries[2].name}</Text>
           </Link>
           </NextLink>
           </>

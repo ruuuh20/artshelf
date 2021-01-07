@@ -27,7 +27,7 @@ const DashboardShell = ({ children }) => {
     >
       <Flex flexDirection="column" w="full" color="gray.900">
         <Flex
-          alignItems="center"
+          alignItems={["end", "center"]}
           justifyContent="space-between"
           pt="1.2rem"
           pb="1.2rem"
@@ -37,20 +37,22 @@ const DashboardShell = ({ children }) => {
           px={8}
           backgroundColor="#fff"
         >
-          <Flex alignItems="center">
+          <Flex alignItems={["flex-start", "center"]} flexDirection={["column", "row"]}>
             <NextLink href="/" passHref>
              <a>
             <Logo className="header-logo" />
             </a>
             </NextLink>
+            <Box>
              <NextLink href="/dashboard" passHref>
             <Link mr={4} ml="-70px">Libraries</Link>
             </NextLink>
              <NextLink href="/books" passHref>
             <Link>Books</Link>
             </NextLink>
+            </Box>
           </Flex>
-          <Flex justifyContent="center" alignItems="center">
+          <Flex justifyContent="center" alignItems="center"     flex-direction={["row-reverse", "initial"]}>
             { user && (
             <Button color="gray.900" variant="link" mr={2} onClick={() => signout()}>
               Log Out
@@ -73,7 +75,7 @@ const DashboardShell = ({ children }) => {
         }
         
       </Flex>
-      <Flex margin="0 auto" direction="column" maxW="1250px" px={8} pt="80px" bg="#fff">
+      <Flex margin="0 auto" direction="column" maxW="1250px" px={8} pt="4%" pb="6%" bg="#fff">
         {children}
       </Flex>
     </Box>
