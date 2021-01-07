@@ -59,11 +59,11 @@ export default function Home( { allBooks , library }) {
       </Head>
        <Logo className="main-logo"/>
        
-        <Text mt="1.5rem" fontSize={["24px", "16px", "16px"]}>A place to catalog your art books.</Text>
+        <Text mt="1.5rem" fontSize={["16px", "16px", "24px"]}>A place to catalog your art books.</Text>
         {auth.user ? (
           <Button as="a" href="/dashboard">Dashboard</Button>
         ) : (
-          <Stack width="500px" flexDirection="row" justifyContent="space-evenly" alignItems="center" mt={5} textAlign="center"> 
+          <Stack width="500px" flexDirection={["column", "row"]} justifyContent="space-evenly" alignItems={["center", "end"]} mt={5}> 
           <Box>
             <Link href='/login'>
                 <a _hover={{ color: 'gray.100' }} textDecoration="underline">Log in with email</a>

@@ -20,12 +20,20 @@ a {
 
 svg {
   overflow: visible;
-  width: 60%;
 }
 
 .main-logo {
   margin: 0 auto;
+  width: 35%;
 }
 .header-logo {
   margin-right: 30px;
+  width: 60%;
+}
+
+hr {
+  width: 30%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-top-width: 6px;
 }
