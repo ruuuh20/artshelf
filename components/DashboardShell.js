@@ -43,9 +43,9 @@ const DashboardShell = ({ children }) => {
             <Logo className="header-logo" />
             </a>
             </NextLink>
-            <Box>
+            <Box pt={["4%", "0"]}>
              <NextLink href="/dashboard" passHref>
-            <Link mr={4} ml="-70px">Libraries</Link>
+            <Link mr={4} ml={["0", "-70px"]}>Libraries</Link>
             </NextLink>
              <NextLink href="/books" passHref>
             <Link>Books</Link>
