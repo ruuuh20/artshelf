@@ -55,7 +55,7 @@ const Signup = () => {
       >
         <Flex justify="center">
           <Box as="a" href="/" aria-label="Back to homepage">
-            <Mail size={48} mb={4} />
+            <Mail size={24} mb={4} />
           </Box>
         </Flex>
         <FormControl isInvalid={errors.email && errors.email.message}>

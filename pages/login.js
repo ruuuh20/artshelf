@@ -55,7 +55,7 @@ const Login = () => {
       >
         <Flex justify="center">
           <Box as="a" href="/" aria-label="Back to homepage">
-            <LogIn size={48} mb={4} />
+            <LogIn size={24} mb={4} />
           </Box>
         </Flex>
         <FormControl isInvalid={errors.email && errors.email.message}>

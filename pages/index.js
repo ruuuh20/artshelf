@@ -42,6 +42,7 @@ export default function Home( { allBooks , library }) {
       margin="0 auto"
       w="full"
       px={8}
+      pb="4rem"
       backgroundColor="#fff"
     >
       <Head>
@@ -58,18 +59,18 @@ export default function Home( { allBooks , library }) {
       </Head>
        <Logo className="main-logo"/>
        
-        <Text mt="1rem" fontSize="24px">A place to catalog your art books.</Text>
+        <Text mt="1.5rem" fontSize={["24px", "16px", "16px"]}>A place to catalog your art books.</Text>
         {auth.user ? (
           <Button as="a" href="/dashboard">Dashboard</Button>
         ) : (
           <Stack width="500px" flexDirection="row" justifyContent="space-evenly" alignItems="center" mt={5} textAlign="center"> 
           <Box>
             <Link href='/login'>
-                <a textDecoration="underline">Log in with email</a>
+                <a _hover={{ color: 'gray.100' }} textDecoration="underline">Log in with email</a>
             </Link>
-            <br />
+            <br /><br />
              <Link href='/signup'>
-                  <a textDecoration="underline">Sign up with email</a>
+                  <a _hover={{ color: 'gray.100' }} textDecoration="underline">Sign up with email</a>
             </Link>
           </Box>
           <Box>

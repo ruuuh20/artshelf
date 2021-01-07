@@ -44,7 +44,7 @@ const DashboardShell = ({ children }) => {
             </a>
             </NextLink>
              <NextLink href="/dashboard" passHref>
-            <Link mr={4}>Libraries</Link>
+            <Link mr={4} ml="-70px">Libraries</Link>
             </NextLink>
              <NextLink href="/books" passHref>
             <Link>Books</Link>

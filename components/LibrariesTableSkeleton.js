@@ -25,9 +25,7 @@ const LibrariesTableSkeleton = () => {
       <thead>
         <Tr>
           <Th>Name</Th>
-          <Th>Site Link</Th>
           <Th>Books Link</Th>
-          <Th>No. of items</Th>
           <Th>{''}</Th>
         </Tr>
       </thead>
