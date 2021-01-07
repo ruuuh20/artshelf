@@ -28,7 +28,7 @@ const BooksRow = ({ id, name, author, description, isbn, status, imageUrl, publi
                 <Link>{name}</Link>
                 </NextLink></Td>
             <Td fontSize="sm">{author}</Td>
-            <Td fontSize="sm">{description}</Td>
+            <Td fontSize="sm"> -</Td>
             <Td fontSize="sm">{publisher}</Td>
           
             <Td>
