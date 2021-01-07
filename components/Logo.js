@@ -4,7 +4,7 @@ function Logo() {
   return (
    
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-	 viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xmlSpace="preserve">
+	 viewBox="0 0 256 256" xmlSpace="preserve">
 <g>
 	<path class="st0" d="M93.1,119.2h-1.1v-1.9c-1,1.2-2.4,2.2-4.3,2.2c-2.1,0-4.2-0.9-4.2-3.9c0-2.8,2.2-4.1,4.7-4.1
 		c1.5,0,2.8,0.4,3.7,0.9v-1.9c0-2.4-1.1-3.4-3.3-3.4c-1.4,0-2.5,0.4-3.6,1l-0.4-0.9c1.1-0.6,2.4-1,4.1-1c2.7,0,4.3,1.1,4.3,4.1
