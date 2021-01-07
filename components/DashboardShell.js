@@ -10,60 +10,10 @@ import {
 import NextLink from 'next/link'
 // import Image from 'next/image'
 import Footer from './Footer'
+import Logo from './Logo'
 import { useRouter } from 'next/router';
 
 import { useAuth } from '@/lib/auth';
-
-export const Logo = () => (
-<NextLink href="/">
-<a>
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.45 13.6" className="logo-svg">
-  <g id="Layer_2" data-name="Layer 2">
-    <g id="Layer_1-2" data-name="Layer 1">
-      <text
-        transform="translate(0 11.05)"
-        fontSize="{13}"
-        fill="#231f20"
-        fontFamily="Interstate-ExtraLight, Interstate"
-        fontWeight="{200}"
-        letterSpacing="-0.03em"
-      >
-        a
-        <tspan x="6.47" y="{0}" letterSpacing="-0.02em">r</tspan>
-        <tspan x="11.31" y="{0}" letterSpacing="-0.03em">t</tspan>
-        <tspan
-          x="15.39"
-          y="{0}"
-          fontFamily="Interstate-Regular, Interstate"
-          fontWeight="{400}"
-          letterSpacing="-0.06em"
-        >
-          r
-        </tspan>
-        <tspan
-          x="20.06"
-          y="{0}"
-          fontFamily="Interstate-Regular, Interstate"
-          fontWeight="{400}"
-          letterSpacing="-0.04em"
-        >
-          e
-        </tspan>
-        <tspan
-          x="26.73"
-          y="{0}"
-          fontFamily="Interstate-Regular, Interstate"
-          fontWeight="{400}"
-        >
-          ads
-        </tspan>
-      </text>
-    </g>
-  </g>
-</svg>  
-</a>
-</NextLink>
-)
 
 const DashboardShell = ({ children }) => {
   const { user, signout } = useAuth();
@@ -89,7 +39,9 @@ const DashboardShell = ({ children }) => {
         >
           <Flex alignItems="center">
             <NextLink href="/" passHref>
-            <Logo />
+             <a>
+            <Logo className="header-logo" />
+            </a>
             </NextLink>
              <NextLink href="/dashboard" passHref>
             <Link mr={4}>Libraries</Link>

@@ -26,11 +26,7 @@ svg {
   width: 50%;
   margin: 0 auto;
 }
-.logo-svg {
-  width: 30%;
+.header-logo {
+  width: 10%;
   margin-right: 30px;
-}
-
-.logo-png {
-  width: 100%;
 }
