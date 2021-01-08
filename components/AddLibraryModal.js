@@ -27,12 +27,11 @@ const AddLibraryModal = ({children}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { handleSubmit, register } = useForm();
 
-  const onCreateLibrary = ({name, url}) => {
+  const onCreateLibrary = ({name}) => {
        const newLibrary = {
       authorId: auth.user ? auth.user.uid : 'no user',
       createdAt: new Date().toISOString(),
       name,
-      url,
       settings: {
         iconos: true,
         timestamp: true,
@@ -93,16 +92,6 @@ const AddLibraryModal = ({children}) => {
               />
             </FormControl>
 
-            <FormControl mt={4}>
-              <FormLabel>Link</FormLabel>
-              <Input
-                placeholder="https://website.com"
-                name="url"
-                ref={register({
-                  required: 'Required'
-                })}
-              />
-            </FormControl>
           </ModalBody>
 
           <ModalFooter>
