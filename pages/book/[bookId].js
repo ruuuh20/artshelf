@@ -33,8 +33,9 @@ const BookPage = () => {
           : <Text>loading...</Text>
           }
         </Flex>
-        <Box marginTop="5rem">
           { book ? (
+            <>
+        <Box marginTop="5rem">
           <SimpleGrid columns={[2, null, 3]} spacing="40px">
             <Box padding="10px" height="80px"><Text fontWeight="bold">Pages</Text>
             <Text>{book.pages}</Text></Box>
@@ -55,13 +56,14 @@ const BookPage = () => {
             <Text>{book.isbn}</Text>
             </Box>
           </SimpleGrid>
-            )
-            : <Text>'loading...'</Text>
-          }
+          
         </Box>
         <Center mt="5rem">
           {book.description}
         </Center>
+        </>
+          ) : <Text>loading...</Text>
+          }       
       </Container>
     </DashboardShell>
   );
