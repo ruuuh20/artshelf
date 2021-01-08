@@ -87,6 +87,7 @@ const BooksPage = () => {
       authorId: user.uid,
       publisher: publisherEl.current.value,
       description: inputEl.current.value,
+      overview: overviewEl.current.value,
       isbn: isbnEl.current.value,
       pages: pagesEl.current.value,
       other: otherEl.current.value,
@@ -97,6 +98,7 @@ const BooksPage = () => {
       status: 'pending'
     };
     inputEl.current.value = '';
+    overviewEl.current.value = '';
     isbnEl.current.value = '';
     pagesEl.current.value = '';
     otherEl.current.value = '';
@@ -173,15 +175,14 @@ const BooksPage = () => {
         <Box as="form" onSubmit={onSubmit}>
          <FormControl my={8}>
            <Stack spacing={3}>
-            <Input ref={nameEl} placeholder="Name of book" size="md" />
-            <Input ref={authorEl} placeholder="Author" size="md" />
-            <Input ref={publisherEl} placeholder="Publisher/Series" size="md" />
-            <Input ref={isbnEl} placeholder="ISBN" size="md" />
-            <Input ref={pagesEl} placeholder="Pages" size="md" />
-            <Input ref={otherEl} placeholder="Other" size="md" />
-            <Input type="number" ref={priceEl} placeholder="Price" size="md" />
-          
-          <Input ref={imageUrlEl} type="file" name="file" placeholder="Upload image" onChange={uploadFile} />
+            <Input ref={nameEl} placeholder="Name of book" size="sm" />
+            <Input ref={authorEl} placeholder="Author" size="sm" />
+            <Input ref={publisherEl} placeholder="Publisher/Series" size="sm" />
+            <Input ref={isbnEl} placeholder="ISBN" size="sm" />
+            <Input ref={overviewEl} placeholder="Overview" size="sm" />
+            <Input ref={pagesEl} placeholder="Pages" size="sm" />
+            <Input ref={otherEl} placeholder="Other" size="sm" />
+            <Input type="number" ref={priceEl} placeholder="Price" size="sm" />
             <Textarea
                 ref={inputEl}
                 id="comment"
@@ -189,6 +190,7 @@ const BooksPage = () => {
                 isDisabled={!user}
                 h="100px"
               />
+            <Input ref={imageUrlEl} type="file" name="file" placeholder="Upload image" onChange={uploadFile} />
             </Stack>
             {!loading && <LoginOrLeaveBook />}
           </FormControl>

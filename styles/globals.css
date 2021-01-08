@@ -38,5 +38,7 @@ hr {
   border-top-width: 6px;
 }
 .x-scroll {
-  overflow-x: scroll;
+  @media screen and (max-width: 30em) {
+    overflow-x: scroll;
+  }
 }

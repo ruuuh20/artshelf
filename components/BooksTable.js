@@ -91,8 +91,8 @@ const BooksTable = (props) => {
       <thead>
         <Tr backgroundColor="brand.green">
           <Th>-</Th>
-          <Th color="brand.blue" width="150px">Title</Th>
-          <Th color="brand.blue" width="120px">Author</Th>
+          <Th color="brand.blue" width="250px">Title</Th>
+          <Th color="brand.blue">Author</Th>
           <Th color="brand.blue">overview</Th>
           <Th color="brand.blue">Publisher/Series</Th>
         
