@@ -90,11 +90,11 @@ const BooksTable = (props) => {
     <Table size="lg">
       <thead>
         <Tr backgroundColor="brand.green">
-          <Th>-</Th>
+          <Th width={["30px", "150px"]} >-</Th>
           <Th color="brand.blue" width="250px">Title</Th>
           <Th color="brand.blue">Author</Th>
           <Th color="brand.blue">overview</Th>
-          <Th color="brand.blue">Publisher/Series</Th>
+          <Th color="brand.blue">Publisher</Th>
         
           <Th color="brand.blue">Available</Th>
           <Th width="50px">{''}</Th>

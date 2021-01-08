@@ -19,16 +19,16 @@ const BooksRow = ({ id, name, author, overview, isbn, status, imageUrl, publishe
   return (
      <Box as="tr" key={id}>
             <Td fontSize="sm"> 
-      <Image 
-      width={["30px", "150px"]} 
-      src={imageUrl || "https://via.placeholder.com/80x120"} alt="image"/>
-    </Td>
+              <Image 
+             
+              src={imageUrl || "https://via.placeholder.com/80x120"} alt="image"/>
+            </Td>
             <Td fontSize="sm" fontWeight="medium">
               <NextLink href="/book/[bookId]" as={`/book/${id}`}>
                 <Link>{name}</Link>
               </NextLink></Td>
             <Td fontSize="sm">{author}</Td>
-            <Td fontSize="sm"> {overview}</Td>
+            <Td fontSize="sm" noOfLines={[1, 2, 3]} isTruncated> {overview}</Td>
             <Td fontSize="sm">{publisher}</Td>
           
             <Td>

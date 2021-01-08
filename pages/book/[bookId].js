@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import fetcher from "@/utils/fetcher";
 import { useRouter } from "next/router";
-import { Container, Heading, Flex, Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Container, Heading, Flex, Box, Image, SimpleGrid, Text, Center} from "@chakra-ui/react";
 import DashboardShell from "@/components/DashboardShell";
 
 const BookPage = () => {
@@ -18,7 +18,7 @@ const BookPage = () => {
           { book ? (
           <>
           <Box flex="1" paddingRight={["0", "50px", "50px"]} paddingTop={["20px", "0", "0"]}>
-            <Heading mb="0" fontSize={{ base: "24px", md: "40px", lg: "56px" }}>{book.name}</Heading>
+            <Heading mb="0" fontSize={{ base: "24px", md: "42px", lg: "50px" }}>{book.name}</Heading>
             <Text mb="1rem" fontSize={{ base: "16px", md: "20px", lg: "24px" }} textAlign="right" as="i" color="gray.500">{book.author}</Text>
             <Text marginTop="2rem" color="gray.800">{book.description}</Text>
           </Box>
@@ -59,6 +59,9 @@ const BookPage = () => {
             : <Text>'loading...'</Text>
           }
         </Box>
+        <Center mt="5rem">
+          {book.description}
+        </Center>
       </Container>
     </DashboardShell>
   );
