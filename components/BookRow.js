@@ -20,13 +20,13 @@ const BooksRow = ({ id, name, author, description, isbn, status, imageUrl, publi
      <Box as="tr" key={id}>
             <Td fontSize="sm"> 
       <Image 
-      width="300px" 
+      width={["30px", "150px"]} 
       src={imageUrl || "https://via.placeholder.com/80x120"} alt="image"/>
     </Td>
             <Td fontSize="sm" fontWeight="medium">
               <NextLink href="/book/[bookId]" as={`/book/${id}`}>
                 <Link>{name}</Link>
-                </NextLink></Td>
+              </NextLink></Td>
             <Td fontSize="sm">{author}</Td>
             <Td fontSize="sm"> -</Td>
             <Td fontSize="sm">{publisher}</Td>

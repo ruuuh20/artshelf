@@ -37,3 +37,6 @@ hr {
   margin-bottom: 1.5rem;
   border-top-width: 6px;
 }
+.x-scroll {
+  overflow-x: scroll;
+}

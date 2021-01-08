@@ -86,7 +86,7 @@ const BooksTable = (props) => {
       </GridItem>
       </Grid>
       </Box>
-    
+    <Box className="x-scroll">
     <Table size="lg">
       <thead>
         <Tr backgroundColor="brand.green">
@@ -106,6 +106,7 @@ const BooksTable = (props) => {
         ))}
       </tbody>
     </Table>
+    </Box>
     </>
   );
 };
