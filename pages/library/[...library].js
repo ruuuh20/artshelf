@@ -48,6 +48,7 @@ const BooksPage = () => {
    const { user, loading } = useAuth();
   const router = useRouter();
   const inputEl = useRef(null);
+  const overviewEl = useRef(null);
   const nameEl = useRef(null)
   const authorEl = useRef(null)
   const publisherEl = useRef(null)
