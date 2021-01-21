@@ -58,7 +58,7 @@ const BookPage = () => {
           </SimpleGrid>
           
         </Box>
-        <Center mt="5rem">
+        <Center lineHeight="1.5" mt="5rem">
           {book.description}
         </Center>
         </>

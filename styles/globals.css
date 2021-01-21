@@ -31,11 +31,12 @@ svg {
   width: 60%;
 }
 
-hr {
+hr#dec-line {
   width: 30%;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  border-top-width: 6px;
+  border-top-width: 4px;
+  color: rgba(0, 0, 0, 0.3);
 }
 .x-scroll {
   @media screen and (max-width: 30em) {

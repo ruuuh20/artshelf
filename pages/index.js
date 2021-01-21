@@ -60,7 +60,7 @@ export default function Home( { allBooks , library }) {
        <Logo className="main-logo"/>
        
         <Text mt="1.5rem" fontSize={["16px", "16px", "24px"]}>A place to catalog your art books.</Text>
-        <hr />
+        <hr id="dec-line" />
         {auth.user ? (
           <Button as="a" href="/dashboard">Dashboard</Button>
         ) : (
