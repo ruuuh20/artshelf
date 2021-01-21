@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import useSWR from 'swr';
 
 import { useAuth } from '@/lib/auth';
@@ -21,6 +22,10 @@ const MyBooks = () => {
   }
 
   return (
+    <>
+     <Head>
+    <title>Books</title>
+  </Head>
     <DashboardShell>
       <BooksTableHeader />
       {data.books.length ? (
@@ -29,6 +34,7 @@ const MyBooks = () => {
         <BooksEmptyState />
       )}
     </DashboardShell>
+    </>
   );
 };
 

@@ -23,10 +23,15 @@ const Dashboard = () => {
   }
 
 return (
+  <>
+  <Head>
+    <title>My libraries</title>
+  </Head>
     <DashboardShell>
       <LibraryTableHeader />
         {data.libraries.length ? <LibrariesTable libraries={data.libraries} /> : <EmptyState />}
     </DashboardShell>
+    </>
 )
 };
 

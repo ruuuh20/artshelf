@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import {
   Box,
   Button,
@@ -38,6 +39,10 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Head>
+      <title>Log in</title>
+    </Head>
     <Flex align="center" justify="center" h="100vh" backgroundColor="rgb(249, 247, 238)">
       <Stack
         as="form"
@@ -109,6 +114,7 @@ const Login = () => {
         </Button>
       </Stack>
     </Flex>
+    </>
   );
 };
 

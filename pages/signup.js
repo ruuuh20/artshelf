@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import {
   Box,
   Button,
@@ -38,6 +39,10 @@ const Signup = () => {
   };
 
   return (
+    <>
+    <Head>
+      <title>Sign up</title>
+    </Head>
     <Flex align="center" justify="center" h="100vh" backgroundColor="rgb(249, 247, 238)">
       <Stack
         as="form"
@@ -109,13 +114,12 @@ const Signup = () => {
         </Button>
       </Stack>
     </Flex>
+    </>
   );
 };
 
 const SignupPage = () => (
-    
     <Signup />
-
 );
 
 export default SignupPage;

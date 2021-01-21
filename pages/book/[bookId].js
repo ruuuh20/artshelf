@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import useSWR from "swr";
 import fetcher from "@/utils/fetcher";
 import { useRouter } from "next/router";
@@ -12,6 +13,10 @@ const BookPage = () => {
   const book = bookData?.book;
 
   return (
+    <>
+     <Head>
+    <title>Book Page</title>
+  </Head>
     <DashboardShell>
       <Container maxW="60rem">
         <Flex flexDirection={['column-reverse', 'column-reverse', 'row']} justifyContent="space-between">
@@ -66,6 +71,7 @@ const BookPage = () => {
           }       
       </Container>
     </DashboardShell>
+    </>
   );
 };
 

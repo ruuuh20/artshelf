@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Box, FormControl, FormLabel, Input, Button, Textarea, Stack, Grid } from '@chakra-ui/react';
@@ -108,7 +109,8 @@ const BooksPage = () => {
     user.uid = '';
     priceEl.current.value = '';
     publisherEl.current.value = '';
-    // setAllBooks([newBook, ...allBooks]);
+    imageUrlEl.current.value= '';
+    
     createBook(newBook);
     mutate(
       booksApi,
@@ -137,8 +139,7 @@ const BooksPage = () => {
         Add book
       </Button>
     ) : (
-      // <LoginButtons />
-      <div>hi</div>
+     'log in'
     );
 
     const uploadFile = async e => {
@@ -158,6 +159,10 @@ const BooksPage = () => {
     }
 
   return (
+    <>
+     <Head>
+    <title>Library Page</title>
+  </Head>
     <DashboardShell>
       <LibraryHeader 
       // isLibraryOwner={true}
@@ -209,8 +214,8 @@ const BooksPage = () => {
           ))}
           </Grid>
       </Box>
-    
     </DashboardShell>
+    </>
   );
 };
 
