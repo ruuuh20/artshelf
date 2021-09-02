@@ -9,7 +9,8 @@ import { getAllBooks, getLibrary } from '@/lib/db-admin';
 import Book from '@/components/Book';
 import Logo from '@/components/Logo'
 
-const LIB_ID = '9TRU3Q9SKpIGVCU0vxz4';
+// const LIB_ID = '9TRU3Q9SKpIGVCU0vxz4';
+const LIB_ID = 'ZzcZ0n23HPQP0tH0cw5C';
 
 export async function getStaticProps(context) {
   const { books} = await getAllBooks(LIB_ID);
