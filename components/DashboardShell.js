@@ -6,6 +6,8 @@ import {
   Link,
   Avatar,
   Image,
+  Heading,
+  Text
 } from '@chakra-ui/react';
 import NextLink from 'next/link'
 // import Image from 'next/image'
@@ -66,10 +68,12 @@ const DashboardShell = ({ children }) => {
           maxW="1250px"
           margin="0 auto"
           w="full"
-          height="350px"
+          height="220px"
           overflow="hidden"
         >
-          <Image src="/hero.jpg" width="100%" transform="translateY(-170px)" />
+          {/* <Image src="/hero.jpg" width="100%" transform="translateY(-170px)" /> */}
+          <Heading align="right" mt={4} as="h1" fontSize={{ base: "24px", md: "42px", lg: "50px" }}>Peak Books Database</Heading>
+          <Text align="right" fontSize={{ base: "12px", md: "18px", lg: "26px" }}>Current Semester: Fall 2021</Text>
         </Box>
         )
         }

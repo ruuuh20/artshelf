@@ -101,7 +101,7 @@ export default function Home( { allBooks , library }) {
     </Flex>
     </Box>
 
-      {/* <Box
+      <Box
         display="flex"
         flexDirection="column"
         width="full"
@@ -118,7 +118,7 @@ export default function Home( { allBooks , library }) {
           {...book} />
         ))
       }
-      </Box> */}
+      </Box>
       </>
   )
 }

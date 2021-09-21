@@ -12,6 +12,7 @@ import BooksTableSkeleton from '@/components/BooksTableSkeleton';
 const MyBooks = () => {
   const { user } = useAuth();
   const { data } = useSWR(user ? ['/api/books', user.token] : null, fetcher);
+  const {allBooks} = useSWR(user ? ['/api/allBooks', user.token] : null, fetcher)
   if (!data) {
     return (
       <DashboardShell>
@@ -20,6 +21,7 @@ const MyBooks = () => {
       </DashboardShell>
     );
   }
+  console.log(data, allBooks)
 
   return (
     <>
@@ -34,6 +36,7 @@ const MyBooks = () => {
         <BooksEmptyState />
       )}
     </DashboardShell>
+    {allBooks ? `hi` : `no`}
     </>
   );
 };

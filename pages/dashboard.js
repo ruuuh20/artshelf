@@ -7,6 +7,7 @@ import LibrariesTable from '@/components/LibrariesTable';
 import LibraryTableHeader from '@/components/LibraryTableHeader';
 import DashboardShell from '@/components/DashboardShell';
 import EmptyState from '@/components/EmptyState';
+import QueryBook from '@/components/QueryBook';
 import fetcher from '@/utils/fetcher';
 
 const Dashboard = () => {
@@ -28,6 +29,7 @@ return (
     <title>My libraries</title>
   </Head>
     <DashboardShell>
+     <QueryBook />
       <LibraryTableHeader />
         {data.libraries.length ? <LibrariesTable libraries={data.libraries} /> : <EmptyState />}
     </DashboardShell>
