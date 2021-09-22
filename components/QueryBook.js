@@ -66,13 +66,12 @@ export default function QueryBook() {
 
   const handleClick = (book) => {
 
-const newBook= {
-      libraryAuthorId: 'none',
-      libraryId: 'none',
+    const newBook= {
+      libraryAuthorId: user.uid,
+      libraryId: 'qoinRUezdrbNNItm4uoe',
     //   route: route || '/',
-
-route: '.',    
-name: book.book.volumeInfo.title,
+      route: '.',    
+      name: book.book.volumeInfo.title,
       author: book.book.volumeInfo.authors[0] || 'no author',
       authorId: user.uid,
       publisher: book.book.volumeInfo.publisher || 'none',
@@ -82,7 +81,7 @@ name: book.book.volumeInfo.title,
       pages:  book.book.volumeInfo.pageCount || 'none',
       other: 'other',
       imageUrl: book.book.volumeInfo.imageLinks.thumbnail,
-      price: '',
+    
       createdAt: new Date().toISOString(),
       provider: user.provider,
       status: 'pending'
@@ -117,15 +116,15 @@ name: book.book.volumeInfo.title,
         </form>
         </div>
     </Flex>
-    <Flex>
+    <Flex pb="10px">
       {result.length ? result.map((book, index) => (
         <>
-        <Box key={index} flex="1">
-        <h2>{book.volumeInfo.title}</h2>
-        <p>{book.volumeInfo.authors ? book.volumeInfo.authors[0] : 'no author'}</p>
+        <Box maxW="sm" borderWidth="1px" borderColor="#ccc" borderRadius="lg" overflow="hidden" p=".5rem" m=".4rem" key={index} flex="1">
+        <Heading as="h4" size="md">{book.volumeInfo.title}</Heading>
+        <Text  fontSize="md" color="#919191">{book.volumeInfo.authors ? book.volumeInfo.authors[0] : 'no author'}</Text>
          <Image src={book.volumeInfo.imageLinks.thumbnail} alt={book.title}/>
-         <p>{book.volumeInfo.industryIdentifiers ? book.volumeInfo.industryIdentifiers[0].identifier : 'no ISBN'} </p>
-         <Button onClick={() => handleClick({book})}>Save book to library</Button>
+         <Text letterSpacing="1.1px" color="#aaa" pt="5px" pb="5px" fontSize="md">ISBN: {book.volumeInfo.industryIdentifiers ? book.volumeInfo.industryIdentifiers[0].identifier : 'no ISBN'} </Text>
+         <Button onClick={() => handleClick({book})}>Save book</Button>
          </Box>
         </>
         )) : ''

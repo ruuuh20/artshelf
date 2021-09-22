@@ -57,7 +57,7 @@ const BooksPage = () => {
   const pagesEl = useRef(null)
   const otherEl = useRef(null)
   const imageUrlEl = useRef(null)
-  const priceEl = useRef(null)
+ 
   // const [allBooks, setAllBooks] = useState(initialBooks);
   // const [libraryId, route] = router.query.library;
   const libraryAndRoute = router.query?.library;
@@ -94,7 +94,7 @@ const BooksPage = () => {
       pages: pagesEl.current.value,
       other: otherEl.current.value,
       imageUrl: newImageUrl,
-      price: priceEl.current.value,
+   
       createdAt: new Date().toISOString(),
       provider: user.provider,
       status: 'pending'
@@ -107,7 +107,7 @@ const BooksPage = () => {
     nameEl.current.value = '';
     authorEl.current.value = '';
     user.uid = '';
-    priceEl.current.value = '';
+  
     publisherEl.current.value = '';
     imageUrlEl.current.value= '';
     
@@ -188,7 +188,7 @@ const BooksPage = () => {
             <Input ref={overviewEl} placeholder="Overview" size="sm" />
             <Input ref={pagesEl} placeholder="Pages" size="sm" />
             <Input ref={otherEl} placeholder="Other" size="sm" />
-            <Input type="number" ref={priceEl} placeholder="Price" size="sm" />
+            
             <Textarea
                 ref={inputEl}
                 id="comment"

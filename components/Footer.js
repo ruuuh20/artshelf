@@ -3,8 +3,8 @@ import { Center } from "@chakra-ui/react"
 
 const Footer = () => {
     return (
-       <Center fontSize="12px" h="100px" color="#000">
-            © Artreads 2021
+       <Center fontSize="14px" h="90px" color="#000">
+            © Bookreads 2021
        </Center>
     )
 }
