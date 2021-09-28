@@ -75,28 +75,29 @@ export default function QueryBook() {
       author: book.book.volumeInfo.authors[0] || 'no author',
       authorId: user.uid,
       publisher: book.book.volumeInfo.publisher || 'none',
-      description: 'a description',
+      description: book.book.volumeInfo.description || 'no description',
       overview: 'an overview',
       isbn: book.book.volumeInfo.industryIdentifiers[0].identifier || '',
       pages:  book.book.volumeInfo.pageCount || 'none',
       other: 'other',
       imageUrl: book.book.volumeInfo.imageLinks.thumbnail,
-    
+      ebook: book.book.accessInfo.webReaderLink || 'not available',
       createdAt: new Date().toISOString(),
       provider: user.provider,
-      status: 'pending'
+      status: 'pending',
+      categories: book.book.volumeInfo.categories || 'n/a'
     };
  createBook(newBook)
   }
 
   return (
     <>
-    <Flex pt="20px" pb="50px">
-      <Box>
-        <Text fontSize="3xl">Search for a book</Text>
+    <Flex pt="25px" pb="25px" direction={["column", "column", "row", "row"]} alignItems={[ "start"]}>
+      {/* <Box>
+        <Text fontSize={{ base: "xl", md: "2xl", lg: "3xl" }} >Find a book</Text>
        
       </Box>
-      <Spacer />
+      <Spacer /> */}
       <div className="query-book">
         
         <form onSubmit={handleSubmit}>

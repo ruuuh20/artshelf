@@ -65,15 +65,13 @@ export default function Home( { allBooks , library }) {
         {auth.user ? (
           <Button as="a" href="/dashboard">Dashboard</Button>
         ) : (
-          <Stack width="500px" flexDirection={["column", "row"]} justifyContent="space-evenly" alignItems={["center", "end"]} mt={5}> 
+          <Stack width="500px" flexDirection={"column"} justifyContent="center" alignItems={"center"} mt={4}> 
           <Box>
-            <Link href='/login'>
-                <a _hover={{ color: 'gray.100' }} textDecoration="underline">Log in with email</a>
+            <Link href='/login' >
+                <a className="link-login">Log in with email</a>
             </Link>
-            <br /><br />
-             <Link href='/signup'>
-                  <a _hover={{ color: 'gray.100' }} textDecoration="underline">Sign up with email</a>
-            </Link>
+            <br />
+           
           </Box>
           <Box>
             <Button
@@ -94,6 +92,10 @@ export default function Home( { allBooks , library }) {
                 Sign In with Google
             </Button>
           </Box>
+          <Box>or</Box>
+          <Box> you can <Link href='/signup'>
+                  <a className="link-login">sign up with email</a>
+            </Link></Box>
           </Stack>
         )
         }

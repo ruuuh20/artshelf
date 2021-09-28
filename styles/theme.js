@@ -5,7 +5,7 @@ const theme = {
   ...chakraTheme,
   fonts: {
     ...chakraTheme.fonts,
-    body: `Barlow,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`
+    body: 'Roboto'
   },
   fontWeights: {
     normal: 400,

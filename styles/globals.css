@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Barlow", Monaco, Lucida Console, Liberation Mono,
+  font-family: "Roboto", Monaco, Lucida Console, Liberation Mono,
     DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   overflow: auto;
 }
@@ -69,7 +69,6 @@ hr#dec-line {
   background-size: 18px 18px;
   background-position: 95% center; */
   border-radius: 15px;
-
   transition: all 250ms ease-in-out;
   backface-visibility: hidden;
   transform-style: preserve-3d;
@@ -81,6 +80,12 @@ hr#dec-line {
   height: 30px;
   padding: 4px 8px;
   position: absolute;
+}
+
+@media screen and (max-width: 30em) {
+  .book-search-input {
+    left: 0;
+  }
 }
 
 .book-search-input:focus {
@@ -107,4 +112,13 @@ hr#dec-line {
 hr {
   color: #ccc;
   margin-bottom: 10px;
+}
+
+.link-login {
+  text-decoration: underline;
+  background: none;
+}
+
+.link-login:hover {
+  color: #a3a3a3;
 }
