@@ -105,9 +105,9 @@ export default function Home( { allBooks , library }) {
 
       <Box
         display="flex"
-        flexDirection="column"
+        flexDirection="row"
         width="full"
-        maxWidth="700px"
+        maxWidth="1080px"
         margin="0 auto"
         mt={8}
       >
